@@ -5,6 +5,7 @@ import WeatherApp from '../images/WeatherApp.png'
 import Playlist from '../images/Playlist.png'
 import Calculator from '../images/calculator.png'
 import Portfolio from '../images/portfolio.png'
+import Default from '../images/default.jpg'
 
 const projects = [
   {
@@ -18,7 +19,7 @@ const projects = [
   {
     title: 'DungeonSim: Procedural Escape',
     description: "Developed in C++ within a Linux environment, this 2D grid-based simulation showcases object-oriented programming principles through an engaging procedural escape scenario. The application features multiple character classes with distinct behaviors and AI-driven interactions, supporting dynamic player positioning and pathfinding algorithms. Built with robust memory management and extensive debugging protocols, the simulation demonstrates advanced software engineering practices including polymorphism, UML modeling, and comprehensive testing methodologies.",
-    image: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?auto=format&fit=crop&w=800&q=80',
+    image: Default,
     tags: ['C++', 'Linux', 'Valgrind', 'GDB'],
     github: 'https://github.com/khizarrm/2d-Game-Simulation',
     demo: 'https://demo.com'
@@ -46,6 +47,22 @@ const projects = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Lucide-React'],
     github: 'https://github.com',
     demo: 'https://demo.com'
+  }, 
+  {
+    title: 'Directory Sorter',
+    description: "A Python automation script that organizes files within directories by automatically sorting and moving them into categorized folders based on file types, streamlining file management and improving directory organization.",
+    image: Default,
+    tags: ['Python'],
+    github: 'https://github.com/khizarrm/Directory-Sort-Programme',
+    demo: 'https://github.com/khizarrm/Directory-Sort-Programme'
+  },
+  {
+    title: 'Stock Predictor',
+    description: "A data science project that analyzes historical stock data to predict future Apple stock prices through machine learning. The model achieved 85% accuracy through optimization and cross-validation, demonstrating practical application in financial forecasting.",
+    image: Default,
+    tags: ['Python', 'Sci-kit Learn', 'MatplotLib', 'Yfinance', 'Numpy'],
+    github: 'https://github.com/khizarrm/Stock-Predictor',
+    demo: 'https://github.com/khizarrm/Stock-Predictor'
   }
 ];
 
