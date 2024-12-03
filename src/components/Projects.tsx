@@ -6,6 +6,7 @@ import Playlist from '../images/Playlist.png'
 import Calculator from '../images/calculator.png'
 import Portfolio from '../images/portfolio.png'
 import Default from '../images/default.jpg'
+import ToDoList from '../images/todolist.png'
 
 const projects = [
   {
@@ -15,6 +16,14 @@ const projects = [
     tags: ['JavaScript', 'HTML', 'CSS', 'Webpack', 'Visual Crossing API'],
     github: 'https://github.com/khizarrm/JS-WeatherApp',
     demo : "https://khizarrm.github.io/JS-WeatherApp/"
+  },
+  {
+    title: 'ToDo List',
+    description: "ProjectTasks is a modern, real-time task management application that revolutionizes project organization through its intuitive project-based structure. Built with React, TypeScript, and Supabase, this application enables users to create dedicated project spaces, each containing its own specialized todo list, making it simple to compartmentalize and manage different areas of work. The real-time synchronization ensures that all updates appear instantly across devices, while the clean, modern interface makes navigation between projects and tasks effortless. Whether you're a solo developer juggling multiple projects or a team coordinating various initiatives, ProjectTasks combines the simplicity of traditional todo lists with the power of project-based organization, all wrapped in a type-safe, reliable platform that keeps your work organized and accessible.",
+    image: ToDoList,
+    tags: ['Typescript', 'React', 'Supabase'],
+    github: 'https://github.com/khizarrm/React-ToDoList',
+    demo: 'https://khizars-todolist.netlify.app'
   },
   {
     title: 'DungeonSim: Procedural Escape',
@@ -64,6 +73,7 @@ const projects = [
     github: 'https://github.com/khizarrm/Stock-Predictor',
     demo: 'https://github.com/khizarrm/Stock-Predictor'
   }
+  
 ];
 
 export default function Projects() {
