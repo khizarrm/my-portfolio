@@ -7,16 +7,18 @@ import Calculator from '../images/calculator.png'
 import Portfolio from '../images/portfolio.png'
 import Default from '../images/default.jpg'
 import ToDoList from '../images/todolist.png'
+import LeetHub from '../images/leethub.png'
 
 const projects = [
   {
-    title: 'Weather App',
-    description: "Built with JavaScript and the Visual Crossing Weather API, this responsive web application delivers real-time weather insights with an intuitive interface. Users can search any location to instantly access current conditions, hourly forecasts, and extended predictions, complete with visual indicators for temperature, precipitation, wind conditions, and other vital meteorological data. The application features dynamic data visualization and seamless error handling to ensure reliable weather information delivery.",
-    image: WeatherApp,
-    tags: ['JavaScript', 'HTML', 'CSS', 'Webpack', 'Visual Crossing API'],
-    github: 'https://github.com/khizarrm/JS-WeatherApp',
-    demo : "https://khizarrm.github.io/JS-WeatherApp/"
+    title: 'LeetHub',
+    image: LeetHub,
+    description: "LeetHub is a browser extension that automatically syncs your successful LeetCode solutions to GitHub. When you solve a problem on LeetCode, the extension detects your submission and instantly pushes the code to your designated GitHub repository, helping you build a comprehensive portfolio of your coding solutions while maintaining a consistent commit history of your LeetCode progress.",
+    tags: ['JavaScript', 'React', 'GitHub REST API'],
+    github: 'https://github.com/khizarrm/LeetHub',
+    demo: 'https://github.com/khizarrm/LeetHub'
   },
+
   {
     title: 'ToDo List',
     description: "ProjectTasks is a modern, real-time task management application that revolutionizes project organization through its intuitive project-based structure. Built with React, TypeScript, and Supabase, this application enables users to create dedicated project spaces, each containing its own specialized todo list, making it simple to compartmentalize and manage different areas of work. The real-time synchronization ensures that all updates appear instantly across devices, while the clean, modern interface makes navigation between projects and tasks effortless. Whether you're a solo developer juggling multiple projects or a team coordinating various initiatives, ProjectTasks combines the simplicity of traditional todo lists with the power of project-based organization, all wrapped in a type-safe, reliable platform that keeps your work organized and accessible.",
@@ -24,6 +26,14 @@ const projects = [
     tags: ['Typescript', 'React', 'Supabase'],
     github: 'https://github.com/khizarrm/React-ToDoList',
     demo: 'https://khizars-todolist.netlify.app'
+  },  
+  {
+    title: 'Weather App',
+    description: "Built with JavaScript and the Visual Crossing Weather API, this responsive web application delivers real-time weather insights with an intuitive interface. Users can search any location to instantly access current conditions, hourly forecasts, and extended predictions, complete with visual indicators for temperature, precipitation, wind conditions, and other vital meteorological data. The application features dynamic data visualization and seamless error handling to ensure reliable weather information delivery.",
+    image: WeatherApp,
+    tags: ['JavaScript', 'HTML', 'CSS', 'Webpack', 'Visual Crossing API'],
+    github: 'https://github.com/khizarrm/JS-WeatherApp',
+    demo : "https://khizarrm.github.io/JS-WeatherApp/"
   },
   {
     title: 'DungeonSim: Procedural Escape',
@@ -96,14 +106,14 @@ export default function Projects() {
     <section id="projects" className="py-20 relative overflow-hidden">
 
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h1 
           className="text-3xl font-bold text-white mb-12 text-glow"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Featured Projects
-        </motion.h2>
+        </motion.h1>
         
         <div className="relative">
           <motion.div 
