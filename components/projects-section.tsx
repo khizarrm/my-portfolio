@@ -10,7 +10,7 @@ export default function ProjectsSection() {
     },
     {
       title: "ThirdSpace",
-      description: "Social networking app for students (currently in development).",
+      description: "Social networking app for students",
       tags: ["React", "Node.js", "MongoDB"],
       link: "https://apps.apple.com/ca/app/thirdspace-share-experiences/id6736379147",
     },
