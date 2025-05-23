@@ -48,31 +48,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardContent className="flex-grow p-6">
         <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
 
-        {showDetails ? (
+
           <div className="space-y-4 text-gray-300 text-base">
             <p>{project.description}</p>
-            <p className="text-sm opacity-80">
-              This project highlights frontend skills, responsive design, and thoughtful UX decisions.
-            </p>
-            <button
-              onClick={() => setShowDetails(false)}
-              className="text-sm text-purple-400 hover:underline"
-            >
-              Show Less
-            </button>
           </div>
-        ) : (
-          <div>
-            <p className="text-gray-300 text-base">{project.description}</p>
-            <button
-              onClick={() => setShowDetails(true)}
-              className="mt-4 inline-flex items-center text-sm text-white-400 hover:underline"
-            >
-              <Info className="w-4 h-4 mr-1" />
-              More Details
-            </button>
-          </div>
-        )}
       </CardContent>
 
       <CardFooter className="p-6 pt-0 flex gap-4 flex-wrap">
