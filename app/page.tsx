@@ -69,9 +69,9 @@ export default function Portfolio() {
           <p className="text-medium mb-8">Software Developer.</p>
           
           <div className="max-w-3xl">
-            <p className="text-body mb-6">I like to build cool and useful stuff. 4th year CS @ Carleton University.</p>
+            <p className="text-body mb-6">I like to build things. 4th year CS @ Carleton University.</p>
             <p className="text-body mb-6">
-              I help build thirdspace, and I'm currently working on learning agentic AI.
+              Currently working on learning Agentic AI. 
             </p>
           </div>
         </header>
