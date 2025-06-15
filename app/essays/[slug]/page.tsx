@@ -24,6 +24,27 @@ const essays = {
 
       There's this one quote I remember hearing a while back: 'a smart man learns from his mistakes, but a wise man learns from those of others'. While this is true, people don't realize that to be wise, you must first be smart.
     `
+  },
+  'traits i respect': {
+    title: 'Respectable Traits',
+    content: `
+    I recently came across a man who wasn’t the smartest or brightest. It seemed like he didn’t put effort into thinking about things deeply, our conversations always remained shallow, even when I tried to go deep. I initially thought perhaps he wasn’t comfortable doing so with me, but as time passed I came to realize he just couldn’t articulate his thoughts deeply enough. Yet he was kind and considerate. He had good manners. But I wouldn’t describe him as someone curious, or smart. I use these terms interchangeably cause I think intelligence comes from being curious - the more curious you are, the more you seek to know. And the more you seek to know, the smarter you become.
+
+    I subconsciously didn’t respect him as much. I had to make a conscious effort to do so. But it seemed unfair to think this way since I’d been in a similar situation before, where I thought I knew enough, but I was proven to be wrong.
+
+    So it made me think. What traits do I need to see in people to respect them? And are these valid? 
+
+    Marcus Aurelius says one of the measures of the value of a man is measured by how kind he is to those unkind. I believe that to be true, but even that takes a level of emotional intelligence to do so. So I think it’s appropriate to have intelligence as one of the measures to respect someone.  At least emotional intelligence. This alone isn’t enough however, there are plenty of emotional intelligent people that act in bad ways. So this trait must be paired with others to be considered respectable. 
+
+    One such trait is a willingness to try new things. Such people understand the embarrassment of being bad at something new and welcome it. They create a safe space without judgement. I think such an environment is necessary for someone to thrive as it provides security to fail, which is necessary for growth. 
+
+    Being able to take criticism is another. Those who can’t don’t grow. But one should be able to distinguish who to take it from and who to ignore. If you take it from everyone, you don’t go nowhere. This adds on to the previous trait as well: creating a non judgmental zone is very useful when delivering or receiving criticism
+
+    Authenticism is also extremely respectable. These people are different. For me, those that I’ve met who have such traits don’t fit into the categories of people I have in my mind. I’ve met quite a few, and even though I’ve disagreed with them on a lot of things, the respect is there because they know themselves, and act in accordance with who they are. In my experience, it’s actually very hard to find genuinely authentic people since a lot of people haven’t even scratched the surface of knowing who they really are.
+
+    So I’d say these 4 traits are what I’d look for to consider someone extremely respectable. Those who don’t have them aren’t not respectable, they still are. But at least for me, my respect for those who do have these traits far exceeds those who don’t. 
+
+    `
   }
 }
 
