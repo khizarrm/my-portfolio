@@ -33,45 +33,5 @@
     @apply text-base md:text-lg leading-relaxed;
   }
   
-  .animated-line {
-    transform: scaleX(0);
-    transform-origin: center;
-    animation: lineGrow 800ms ease-out forwards;
-  }
-  
-  .animated-line-delay-1 {
-    animation-delay: 150ms;
-  }
-  
-  .animated-line-delay-2 {
-    animation-delay: 300ms;
-  }
-  
-  .animated-line-delay-3 {
-    animation-delay: 450ms;
-  }
-  
-  .animated-line-delay-4 {
-    animation-delay: 600ms;
-  }
-  
-  .animated-line-delay-5 {
-    animation-delay: 750ms;
-  }
 }
 
-@keyframes lineGrow {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animated-line {
-    animation: none;
-    transform: scaleX(1);
-  }
-}

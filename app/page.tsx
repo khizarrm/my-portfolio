@@ -5,51 +5,55 @@ export default function Portfolio() {
     {
       id: 1,
       title: "thirdspace",
-      description:
-        "A social networking app to allow users to share experiences simutaneoulsy.",
+      description: "A social networking app for sharing experiences simultaneously. 1000+ users, top 70 in the app store.",
       image: "/videos/thirdspace.mp4",
       github: null,
       live: "https://thirdspace.so/",
     },
     {
       id: 2,
+      title: "Sage AI",
+      description: "Chrome extension using ML to block unproductive pages. Features real-time learning and in-browser model retraining via Flask APIs.",
+      image: "/videos/sage.mp4",
+      github: "https://github.com/khizarrm/sage-ai",
+      live: null,
+    },
+    {
+      id: 3,
       title: "Zeez Creations",
-      description:
-        "A fully functional website for an interior design studio, which bought in 30% more clients.",
+      description: "Website for an interior design studio that brought in 100+ new clients.",
       image: "/videos/zeez.mp4",
       github: "https://github.com/khizarrm/zeezfinal",
       live: "https://zeezcreations.com/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Plainly",
-      description:
-        "An app that takes your messy voice notes — in any language — and rewrites them into clear, polite messages for clients or friends.",
+      description: "App that converts messy voice notes to clear messages. Created for my mom who doesn't speak English well.",
       image: "/videos/plainly.mov",
       github: "https://github.com/khizarrm/plainly",
       live: "https://plainly.vercel.app",
     },
     {
-      id: 4,
+      id: 5,
       title: "CareWeb",
-      description:
-        "A healthtech agency which provided website redesign/developments and AI integration for health clinics, allowing them to bring in more clients",
+      description: "Healthtech agency providing website development and agentic AI for automating clinic workflows.",
       image: "/videos/careweb.mp4",
       github: "https://github.com/khizarrm/careweb",
       live: "https://careweb.ca/",
     },
     {
-      id: 5,
+      id: 6,
       title: "LeetHub",
-      description: "A chrome extension which automatically syncs your correct LeetCode submissions to github for employers to see",
+      description: "Recreation of the existing LeetHub extension - built for UI/UX and API practice.",
       image: "./videos/leethub.mkv",
       github: "https://github.com/khizarrm/LeetHub",
       live: null,
     },
     {
-      id: 6,
+      id: 7,
       title: "Lider (Walmart) Scraper",
-      description: "An application which scrapes all products of all categories on the walmart website.",
+      description: "Walmart product scraper built for API and web scraping practice.",
       image: "/videos/lider-scraper.mp4",
       github: "https://github.com/yourusername/recipe-finder",
       live: null,
@@ -65,28 +69,21 @@ export default function Portfolio() {
           <p className="text-medium mb-8">Software Developer.</p>
           
           <div className="max-w-3xl">
-            <p className="text-body mb-6">I live in Ontario.</p>
+            <p className="text-body mb-6">I like to build cool and useful stuff. 4th year CS @ Carleton University.</p>
             <p className="text-body mb-6">
-              I help run Z Fellows and previously joined TCP.
-            </p>
-            <p className="text-body mb-6">
-              Recently, I started Yesterday Media. We interview individuals across industries, focused on 
-              their childhood to the present day. Much of what we record hasn't been shared publicly.
-            </p>
-            <p className="text-body">
-              Episodes release weekly across platforms, alongside a written biography on each guest.
+              I help build thirdspace, and I'm currently working on learning agentic AI.
             </p>
           </div>
         </header>
 
         {/* Divider */}
-        <hr className="border-white mb-16 animated-line" />
+        <hr className="border-white mb-16" />
 
         {/* Navigation Section */}
         <nav className="mb-16">
           <div className="flex gap-8">
             <a href="/essays" className="underline-link text-body font-medium">
-              Essays
+              Writings
             </a>
             <a href="https://github.com/khizarrm" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
               GitHub

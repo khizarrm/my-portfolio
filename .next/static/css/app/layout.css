@@ -580,11 +580,6 @@ video {
     line-height: 1.75rem;
   }
 }
-.animated-line {
-    transform: scaleX(0);
-    transform-origin: center;
-    animation: lineGrow 800ms ease-out forwards;
-  }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1777,22 +1772,6 @@ video {
 }
 .ease-out {
   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-}
-
-@keyframes lineGrow {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animated-line {
-    animation: none;
-    transform: scaleX(1);
-  }
 }
 
 .file\:border-0::file-selector-button {
@@ -3146,4 +3125,5 @@ video {
 [data-side=right] .\[\[data-side\=right\]_\&\]\:cursor-e-resize {
   cursor: e-resize;
 }
+
 

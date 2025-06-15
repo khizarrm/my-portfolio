@@ -1,86 +1,66 @@
-# Website Redesign - Minimalistic Black & White Theme
+# Portfolio Updates - Making Descriptions Concise and Adding Sage AI
 
-## Overview
-Complete redesign of portfolio website with:
-- Jost font from Google Fonts
-- Black and white minimalistic theme
-- Clean typography and layout inspired by example.png
-- Name, title, bio section
-- Essays and Projects sections with underlined navigation
-- Smaller project cards (6 per row)
+## Summary
+Based on user requirements:
+1. Make all project descriptions more concise with specific metrics/details
+2. Add Sage AI project with detailed description
+3. Remove line animations completely
 
-## Implementation Plan
+## Tasks
 
-### Phase 1: Foundation Setup
-- [x] **Font Integration**: Add Jost font from Google Fonts to layout.tsx
-- [x] **Theme Update**: Replace current globals.css with minimalistic black/white theme
-- [x] **Typography**: Set up clean typography hierarchy matching example design
+### 1. Update Project Descriptions (Make Concise + Add Metrics)
+- [ ] **thirdspace**: Update to mention 1000+ users and top 70 in app store
+- [ ] **Zeez Creations**: Update to mention 100+ new clients gained
+- [ ] **CareWeb**: Update to mention agentic AI for automating clinic workflows
+- [ ] **LeetHub**: Update to clarify it's a recreation for UI/UX and API practice
+- [ ] **Lider Scraper**: Update to mention it's for API/scraping practice
+- [ ] **Plainly**: Update to mention it was created for user's mom who doesn't speak English well
+- [ ] Fix "simutaneoulsy" typo to "simultaneously"
 
-### Phase 2: Homepage Redesign  
-- [x] **Header Section**: 
-  - Large name display (Khizar Malik)
-  - "Software Developer" subtitle
-  - Clean bio section
-- [x] **Remove Elements**: Strip out current social media buttons and complex layouts
-- [x] **Center Layout**: Implement clean centered layout with proper spacing
+### 2. Add Sage AI Project
+- [ ] Add Sage AI to projects array with details:
+  - Chrome extension for productivity
+  - ML model stops unproductive page visits
+  - Real-time learning through user feedback
+  - Model retraining capability in browser using Flask APIs
+  - Video: sage.mp4
+- [ ] Position appropriately in projects list
 
-### Phase 3: Navigation & Sections
-- [x] **Essays Section**: Add Essays section with underlined text styling
-- [x] **Projects Section**: Add Projects section with underlined text styling  
-- [x] **Navigation**: Implement clean navigation between sections
+### 3. Remove Line Animations
+- [ ] Remove all animated-line CSS classes from globals.css
+- [ ] Remove lineGrow keyframes animation
+- [ ] Remove animation delay classes (animated-line-delay-1, etc.)
+- [ ] Update all hr elements across pages to remove animation classes:
+  - app/page.tsx main divider
+  - app/essays/page.tsx essay separators  
+  - app/essays/[slug]/page.tsx back navigation divider
+- [ ] Keep prefers-reduced-motion media query cleanup
 
-### Phase 4: Essays System Implementation
-- [x] **Navigation Update**: Replace "Publishings", "Like", "Thoughts" with "GitHub", "LinkedIn", "X" links
-- [x] **Essays List**: Create essays section with titles separated by lines
-- [x] **Dynamic Routing**: Set up Next.js dynamic routing for individual essays (/essays/[slug])
-- [x] **Essay Page Component**: Create individual essay page with:
-  - Title at top
-  - Back navigation to home
-  - Long essay content (placeholder text)
-- [x] **Sample Essays**: Add 4 sample essays with titles and slugs
-- [x] **Styling**: Ensure essays page matches minimalistic black/white theme
+### 4. Final Testing
+- [ ] Test all project descriptions are concise and informative
+- [ ] Verify Sage AI project displays correctly
+- [ ] Confirm all animations are removed
+- [ ] Check responsive layout still works
 
-### Phase 5: Project Cards Update
-- [ ] **Grid Layout**: Update ProjectCard component for 6-per-row layout
-- [ ] **Card Sizing**: Make project cards smaller and more compact
-- [ ] **Responsive**: Ensure cards work well on different screen sizes
+## New Project Descriptions (Draft)
 
-### Phase 6: Final Polish
-- [ ] **Mobile Responsive**: Test and optimize for mobile devices
-- [ ] **Typography Polish**: Fine-tune font sizes and spacing
-- [ ] **Performance**: Ensure fast loading and clean code
+### thirdspace
+"A social networking app for sharing experiences simultaneously. 1000+ users, top 70 in the app store."
 
-## Design Reference
-Following the clean, serif-like design from example.png with:
-- Clean black background (updated)
-- White text (updated)
-- Generous white space
-- Underlined links/navigation
-- Simple, elegant typography hierarchy
+### Zeez Creations  
+"Website for an interior design studio that brought in 100+ new clients."
 
-## Phase 7: Line Animation System (NEW)
-- [x] **CSS Keyframes**: Create smooth line growth animation (scaleX from 0 to 1)
-- [x] **Center Origin**: Set transform-origin to center so lines grow from middle outward
-- [x] **Staggered Timing**: Add animation delays for top-to-bottom sequential effect
-- [x] **Global Application**: Apply to all `<hr>` elements across all pages:
-  - Main page divider
-  - Essays index page separators
-  - Individual essay pages back navigation divider
-- [x] **Animation Utilities**: Create CSS utility classes for different delay timings
-- [x] **Performance**: Ensure smooth 60fps animation without impacting page load
-- [x] **Responsive**: Test animation works well on mobile and desktop
-- [x] **Accessibility**: Respect prefers-reduced-motion for users who prefer no animations
+### CareWeb
+"Healthtech agency providing website development and agentic AI for automating clinic workflows."
 
-## Technical Approach
-- Use `transform: scaleX()` with `transform-origin: center`
-- CSS `@keyframes` for smooth growth effect
-- Animation delays: 0ms, 150ms, 300ms, 450ms for staggered effect
-- Duration: ~800ms for elegant, not-too-fast transition
-- Easing: `ease-out` for natural deceleration
+### LeetHub
+"Recreation of the existing LeetHub extension - built for UI/UX and API practice."
 
-## Notes
-- Focus on clean, minimalistic aesthetic
-- Maintain fast loading performance
-- Ensure accessibility standards
-- Essays should be easily navigable and readable
-- Line animations should enhance, not distract from content
+### Lider Scraper
+"Walmart product scraper built for API and web scraping practice."
+
+### Plainly
+"App that converts messy voice notes to clear messages. Created for my mom who doesn't speak English well."
+
+### Sage AI (NEW)
+"Chrome extension using ML to block unproductive pages. Features real-time learning and in-browser model retraining via Flask APIs."

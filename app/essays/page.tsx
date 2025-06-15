@@ -2,20 +2,8 @@ import Link from 'next/link'
 
 const essays = [
   {
-    slug: 'the-future-of-ai-development',
-    title: 'The Future of AI Development'
-  },
-  {
-    slug: 'building-in-public',
-    title: 'Building in Public: Lessons from Yesterday Media'
-  },
-  {
-    slug: 'the-power-of-storytelling',
-    title: 'The Power of Storytelling in Technology'
-  },
-  {
-    slug: 'minimalism-in-design',
-    title: 'Minimalism in Design: Less is More'
+    slug: 'the-privilege-of-failing',
+    title: 'The Privilege of Failing'
   }
 ]
 
@@ -27,7 +15,7 @@ export default function EssaysPage() {
           ← Back to Home
         </Link>
         
-        <h1 className="text-large font-bold mb-12">Essays</h1>
+        <h1 className="text-large font-bold mb-12">Writings</h1>
         
         <div className="space-y-6">
           {essays.map((essay, index) => (
@@ -35,7 +23,7 @@ export default function EssaysPage() {
               <Link href={`/essays/${essay.slug}`} className="text-body font-medium hover:text-gray-300 transition-colors">
                 {essay.title}
               </Link>
-              <hr className={`border-white mt-4 animated-line ${index > 0 ? `animated-line-delay-${index}` : ''}`} />
+              <hr className="border-white mt-4" />
             </div>
           ))}
         </div>
