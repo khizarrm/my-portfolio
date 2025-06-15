@@ -82,9 +82,9 @@ export default function Portfolio() {
         {/* Navigation Section */}
         <nav className="mb-16">
           <div className="flex gap-8">
-            {/* <a href="/essays" className="underline-link text-body font-medium">
+            <a href="/essays" className="underline-link text-body font-medium">
               Writings
-            </a> */}
+            </a>
             <a href="https://github.com/khizarrm" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
               GitHub
             </a>
