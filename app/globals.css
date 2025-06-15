@@ -2,32 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
+@layer base {
+  * {
+    @apply border-border;
   }
-  .animation-delay-4000 {
-    animation-delay: 4s;
+  
+  body {
+    @apply bg-black text-white font-jost antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-jost;
   }
 }
 
 @layer components {
-  .animate-blob {
-    animation: blob 7s infinite;
+  .underline-link {
+    @apply border-b border-white pb-1 hover:border-gray-400 transition-colors duration-200;
+  }
+  
+  .text-large {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  .text-medium {
+    @apply text-xl md:text-2xl;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  .animated-line {
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: lineGrow 800ms ease-out forwards;
+  }
+  
+  .animated-line-delay-1 {
+    animation-delay: 150ms;
+  }
+  
+  .animated-line-delay-2 {
+    animation-delay: 300ms;
+  }
+  
+  .animated-line-delay-3 {
+    animation-delay: 450ms;
+  }
+  
+  .animated-line-delay-4 {
+    animation-delay: 600ms;
+  }
+  
+  .animated-line-delay-5 {
+    animation-delay: 750ms;
   }
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
+  to {
+    transform: scaleX(1);
   }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-line {
+    animation: none;
+    transform: scaleX(1);
   }
 }
