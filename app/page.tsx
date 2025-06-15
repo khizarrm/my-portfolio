@@ -55,7 +55,7 @@ export default function Portfolio() {
       title: "Lider (Walmart) Scraper",
       description: "Walmart product scraper built for API and web scraping practice.",
       image: "/videos/lider-scraper.mp4",
-      github: "https://github.com/yourusername/recipe-finder",
+      github: "",
       live: null,
     }
   ]
