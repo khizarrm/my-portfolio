@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Github, ExternalLink, Info } from "lucide-react"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import Image from "next/image"
@@ -21,28 +21,82 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const handleVideoLoad = () => {
+    setIsLoading(false)
+  }
+
+  const handleVideoError = () => {
+    setIsLoading(false)
+  }
 
   return (
     <Card
+      ref={cardRef}
       className={`rounded-2xl border border-gray-800 transition-all duration-300 h-full flex flex-col
         ${isHovered ? "shadow-md scale-[1.01]" : "shadow-sm"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative h-60 w-full overflow-hidden">
-      <video
-        src={project.image || "./placeholder.svg"}// 👈 Put your file in public/videos/
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '20px',
-          objectFit: 'cover'
-        }}
-      />
+        {/* Loading placeholder */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
+        
+        {/* Video */}
+        {isVisible && (
+          <video
+            ref={videoRef}
+            src={project.image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onLoadedData={handleVideoLoad}
+            onError={handleVideoError}
+            style={{
+              width: '100%',
+              height: '100%',
+              borderRadius: '20px',
+              objectFit: 'cover',
+              opacity: isLoading ? 0 : 1,
+              transition: 'opacity 0.3s ease'
+            }}
+          />
+        )}
+        
+        {/* Fallback placeholder if not visible yet */}
+        {!isVisible && (
+          <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
+            <div className="text-gray-400 text-sm">{project.title}</div>
+          </div>
+        )}
       </div>
 
       <CardContent className="flex-grow p-6">

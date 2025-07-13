@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/optimize-videos.sh:*)",
+      "Bash(ffmpeg:*)"
     ],
     "deny": []
   }
