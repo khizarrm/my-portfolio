@@ -19,6 +19,14 @@ export default function Portfolio() {
       live: null,
     },
     {
+      id: 3, 
+      title: "Passr", 
+      description: "Web app which optimizes your resume for a JD. Currently at 25+ users.",
+      image: "/videos/passr.mp4",
+      github: "https://github.com/khizarrm/passr",
+      live: "https://passrai.netlify.app/", 
+    },
+    {
       id: 3,
       title: "Zeez Creations",
       description: "Website for an interior design studio that brought in 100+ new clients.",
@@ -82,9 +90,6 @@ export default function Portfolio() {
         {/* Navigation Section */}
         <nav className="mb-16">
           <div className="flex gap-8">
-            <a href="/essays" className="underline-link text-body font-medium">
-              Writings
-            </a>
             <a href="https://github.com/khizarrm" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
               GitHub
             </a>
