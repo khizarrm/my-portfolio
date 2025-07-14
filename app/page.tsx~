@@ -21,7 +21,7 @@ export default function Portfolio() {
     {
       id: 3, 
       title: "Passr", 
-      description: "A web app which optimizes and modifies your resume to a certain job description, increasing your ATS score",
+      description: "Web app which optimizes your resume for a JD. Currently at 25+ users.",
       image: "/videos/passr.mp4",
       github: "https://github.com/khizarrm/passr",
       live: "https://passrai.netlify.app/", 
