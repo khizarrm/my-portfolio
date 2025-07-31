@@ -24,7 +24,7 @@ export default function Portfolio() {
       description: "Web app which optimizes your resume for a JD. Currently at 25+ users.",
       image: "/videos/passr.mp4",
       github: "https://github.com/khizarrm/passr",
-      live: "https://passrai.netlify.app/", 
+      live: "https://passr.vercel.app/", 
     },
     {
       id: 3,
