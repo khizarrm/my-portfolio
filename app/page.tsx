@@ -44,26 +44,10 @@ export default function Portfolio() {
     },
     {
       id: 5,
-      title: "CareWeb",
-      description: "Healthtech agency providing website development and agentic AI for automating clinic workflows.",
-      image: "/videos/careweb.mp4",
-      github: "https://github.com/khizarrm/careweb",
-      live: "https://careweb.ca/",
-    },
-    {
-      id: 6,
       title: "LeetHub",
       description: "Recreation of the existing LeetHub extension - built for UI/UX and API practice.",
       image: "./videos/leethub.mkv",
       github: "https://github.com/khizarrm/LeetHub",
-      live: null,
-    },
-    {
-      id: 7,
-      title: "Lider (Walmart) Scraper",
-      description: "Walmart product scraper built for API and web scraping practice.",
-      image: "/videos/lider-scraper.mp4",
-      github: "",
       live: null,
     }
   ]
