@@ -4,7 +4,9 @@
       "Bash(mkdir:*)",
       "Bash(chmod:*)",
       "Bash(./scripts/optimize-videos.sh:*)",
-      "Bash(ffmpeg:*)"
+      "Bash(ffmpeg:*)",
+      "Bash(npm run dev:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

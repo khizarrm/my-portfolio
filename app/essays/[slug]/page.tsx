@@ -9,6 +9,7 @@ interface EssayPageProps {
 const essays = {
   'the-privilege-of-failing': {
     title: 'The Privilege of Failing',
+    date: 'December 2024',
     content: `
       There's a lot of privileges that a person has. This doesn't apply to everyone, but if you're reading this you probably have several privileges you don't think about. For example, access to wifi is a big one, you have an infinite amount of knowledge at your fingertips.
 
@@ -46,24 +47,37 @@ export default function EssayPage({ params }: EssayPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black">
       <div className="max-w-4xl mx-auto px-8 py-16">
-        <Link href="/" className="underline-link text-body mb-8 inline-block">
-          ← Back to Home
-        </Link>
-        <hr className="border-white mb-8" />
+        {/* Header Section */}
+        <header className="mb-16">
+          <Link href="/essays" className="underline-link text-body mb-8 inline-block">
+            ← Back to Writings
+          </Link>
+          <h1 className="text-large font-bold mb-4">{essay.title}</h1>
+          <p className="text-body text-gray-500">{essay.date}</p>
+        </header>
+
+        {/* Divider */}
+        <hr className="border-white mb-16" />
         
-        <article>
-          <h1 className="text-large font-bold mb-12">{essay.title}</h1>
-          
-          <div className="prose prose-invert max-w-none">
+        {/* Article Content */}
+        <article className="max-w-3xl">
+          <div className="space-y-6">
             {essay.content.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-body mb-6 leading-relaxed">
+              <p key={index} className="text-body leading-relaxed text-white">
                 {paragraph.trim()}
               </p>
             ))}
           </div>
         </article>
+
+        {/* Footer Navigation */}
+        <footer className="mt-16 pt-8 border-t border-white">
+          <Link href="/essays" className="underline-link text-body font-medium">
+            ← View all writings
+          </Link>
+        </footer>
       </div>
     </div>
   )
