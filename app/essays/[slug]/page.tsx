@@ -72,12 +72,6 @@ export default function EssayPage({ params }: EssayPageProps) {
           </div>
         </article>
 
-        {/* Footer Navigation */}
-        <footer className="mt-16 pt-8 border-t border-white">
-          <Link href="/essays" className="underline-link text-body font-medium">
-            ← View all writings
-          </Link>
-        </footer>
       </div>
     </div>
   )
