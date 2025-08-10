@@ -19,7 +19,6 @@ export default function EssaysPage() {
             ← Back to Home
           </Link>
           <h1 className="text-large font-bold mb-4">Writings</h1>
-          <p className="text-body text-gray-400">Thoughts on technology, life, and everything in between.</p>
         </header>
 
         {/* Divider */}
