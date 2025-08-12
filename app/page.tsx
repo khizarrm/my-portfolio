@@ -4,6 +4,14 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
+      title: "Amategeko",
+      description: "Legislation app for the Government of Rwanda. Built during internship at WiredIn with team collaboration.",
+      image: "/videos/amategeko.MP4",
+      github: null,
+      live: null,
+    },
+    {
+      id: 2,
       title: "thirdspace",
       description: "A social networking app for sharing experiences simultaneously. 1000+ users, top 70 in the app store.",
       image: "/videos/thirdspace.mp4",
@@ -11,7 +19,7 @@ export default function Portfolio() {
       live: "https://thirdspace.so/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Sage AI",
       description: "Chrome extension using ML to block unproductive pages. Features real-time learning and in-browser model retraining via Flask APIs.",
       image: "/videos/sage.mp4",
@@ -19,15 +27,15 @@ export default function Portfolio() {
       live: null,
     },
     {
-      id: 3, 
+      id: 4, 
       title: "Passr", 
-      description: "Web app which optimizes your resume for a JD. Currently at 25+ users.",
+      description: "Web app which optimizes your resume for a JD. Currently at 40+ users.",
       image: "/videos/passr.mp4",
       github: "https://github.com/khizarrm/passr",
       live: "https://passr.vercel.app/", 
     },
     {
-      id: 3,
+      id: 5,
       title: "Zeez Creations",
       description: "Website for an interior design studio that brought in 100+ new clients.",
       image: "/videos/zeez.mp4",
@@ -35,7 +43,7 @@ export default function Portfolio() {
       live: "https://zeezcreations.com/",
     },
     {
-      id: 4,
+      id: 6,
       title: "Plainly",
       description: "App that converts messy voice notes to clear messages. Created for my mom who doesn't speak English well.",
       image: "/videos/plainly.mov",
@@ -43,7 +51,7 @@ export default function Portfolio() {
       live: "https://plainly.vercel.app",
     },
     {
-      id: 5,
+      id: 7,
       title: "LeetHub",
       description: "Recreation of the existing LeetHub extension - built for UI/UX and API practice.",
       image: "./videos/leethub.mkv",
