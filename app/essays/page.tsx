@@ -4,8 +4,12 @@ const essays = [
   {
     slug: 'the-privilege-of-failing',
     title: 'The Privilege of Failing',
-    excerpt: 'Having the comfort of failing is one of the most critical things needed to succeed. Paul Graham says that to succeed, you must find what you love, which takes discipline and trying a bunch of different things.',
     date: 'December 2024'
+  },
+  {
+    slug: 'changing-your-baseline',
+    title: 'Changing Your Baseline',
+    date: 'September 2025'
   }
 ]
 
@@ -38,9 +42,6 @@ export default function EssaysPage() {
                       {essay.date}
                     </span>
                   </div>
-                  <p className="text-body text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
-                    {essay.excerpt}
-                  </p>
                 </Link>
               </article>
             ))}

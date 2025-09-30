@@ -52,6 +52,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     setIsLoading(false)
   }
 
+  const handleImageLoad = () => {
+    setIsLoading(false)
+  }
+
+  const handleImageError = () => {
+    setIsLoading(false)
+  }
+
+  const isImage = project.image.endsWith('.png') || project.image.endsWith('.jpg') || project.image.endsWith('.jpeg') || project.image.endsWith('.gif') || project.image.endsWith('.webp')
+
   return (
     <Card
       ref={cardRef}
@@ -68,27 +78,44 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
         
-        {/* Video */}
+        {/* Media - Image or Video */}
         {isVisible && (
-          <video
-            ref={videoRef}
-            src={project.image}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onLoadedData={handleVideoLoad}
-            onError={handleVideoError}
-            style={{
-              width: '100%',
-              height: '100%',
-              borderRadius: '20px',
-              objectFit: 'cover',
-              opacity: isLoading ? 0 : 1,
-              transition: 'opacity 0.3s ease'
-            }}
-          />
+          <>
+            {isImage ? (
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover rounded-t-2xl"
+                style={{
+                  opacity: isLoading ? 0 : 1,
+                  transition: 'opacity 0.3s ease'
+                }}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                src={project.image}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onLoadedData={handleVideoLoad}
+                onError={handleVideoError}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '20px',
+                  objectFit: 'cover',
+                  opacity: isLoading ? 0 : 1,
+                  transition: 'opacity 0.3s ease'
+                }}
+              />
+            )}
+          </>
         )}
         
         {/* Fallback placeholder if not visible yet */}

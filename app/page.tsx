@@ -5,7 +5,7 @@ export default function Portfolio() {
     {
       id: 1,
       title: "Amategeko",
-      description: "Legislation app for the Government of Rwanda. Built during internship at WiredIn with team collaboration.",
+      description: "Legislation app for the Government of Rwanda. Target towards 10,000+ legal workers.Built during internship at WiredIn with team collaboration.",
       image: "/videos/amategeko.MP4",
       github: null,
       live: null,
@@ -20,6 +20,14 @@ export default function Portfolio() {
     },
     {
       id: 3,
+      title: "Books and Brains",
+      description: "Ecommerce platform for selling books to kids in Kigali. Addressing the gap since the country only has one library. 300+ active users.",
+      image: "/books.png",
+      github: null,
+      live: null,
+    },
+    {
+      id: 4,
       title: "Sage AI",
       description: "Chrome extension using ML to block unproductive pages. Features real-time learning and in-browser model retraining via Flask APIs.",
       image: "/videos/sage.mp4",
@@ -27,7 +35,7 @@ export default function Portfolio() {
       live: null,
     },
     {
-      id: 4, 
+      id: 5, 
       title: "Passr", 
       description: "Web app which optimizes your resume for a JD. Currently at 40+ users.",
       image: "/videos/passr.mp4",
@@ -35,7 +43,7 @@ export default function Portfolio() {
       live: "https://passr.vercel.app/", 
     },
     {
-      id: 5,
+      id: 6,
       title: "Zeez Creations",
       description: "Website for an interior design studio that brought in 100+ new clients.",
       image: "/videos/zeez.mp4",
@@ -43,7 +51,7 @@ export default function Portfolio() {
       live: "https://zeezcreations.com/",
     },
     {
-      id: 6,
+      id: 7,
       title: "Plainly",
       description: "App that converts messy voice notes to clear messages. Created for my mom who doesn't speak English well.",
       image: "/videos/plainly.mov",
@@ -51,7 +59,7 @@ export default function Portfolio() {
       live: "https://plainly.vercel.app",
     },
     {
-      id: 7,
+      id: 8,
       title: "LeetHub",
       description: "Recreation of the existing LeetHub extension - built for UI/UX and API practice.",
       image: "./videos/leethub.mkv",
@@ -59,6 +67,14 @@ export default function Portfolio() {
       live: null,
     }
   ]
+
+  const mobileProjects = projects.filter((project) =>
+    ["Amategeko", "thirdspace", "Books and Brains"].includes(project.title)
+  )
+
+  const webProjects = projects.filter(
+    (project) => !mobileProjects.includes(project)
+  )
 
   return (
     <div className="min-h-screen bg-black">
@@ -69,9 +85,9 @@ export default function Portfolio() {
           <p className="text-medium mb-8">Software Developer.</p>
           
           <div className="max-w-3xl">
-            <p className="text-body mb-6">I like to build things. 3rd year CS @ Carleton University.</p>
+            <p className="text-body mb-6">I like to build things. Cansbridge Scholar. 4th year CS @ Carleton University.</p>
             <p className="text-body mb-6">
-              Currently working on learning Agentic AI. 
+              Currently building AI agents at a startup. 
             </p>
           </div>
         </header>
@@ -100,10 +116,24 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="mb-16">
           <h2 className="text-medium font-bold mb-8">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-body font-semibold mb-6">Mobile Apps</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {mobileProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-body font-semibold mb-6">Web Apps</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {webProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </div>
