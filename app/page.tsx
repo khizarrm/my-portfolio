@@ -1,141 +1,223 @@
-import ProjectCard from "@/components/project-card"
-
 export default function Portfolio() {
-  const projects = [
+  const experiences = [
     {
-      id: 1,
-      title: "Amategeko",
-      description: "Legislation app for the Government of Rwanda. Target towards 10,000+ legal workers.Built during internship at WiredIn with team collaboration.",
-      image: "/videos/amategeko.MP4",
-      github: null,
-      live: null,
+      role: 'Engineering',
+      company: 'fullscript.com',
+      website: 'https://fullscript.com',
     },
     {
-      id: 2,
-      title: "thirdspace",
-      description: "A social networking app for sharing experiences simultaneously. 1000+ users, top 70 in the app store.",
-      image: "/videos/thirdspace.mp4",
-      github: null,
-      live: "https://thirdspace.so/",
+      role: 'Engineering',
+      company: 'thirdspace.so',
+      website: 'https://thirdspace.so',
     },
     {
-      id: 3,
-      title: "Books and Brains",
-      description: "Ecommerce platform for selling books to kids in Kigali. Addressing the gap since the country only has one library. 300+ active users.",
-      image: "/books.png",
-      github: null,
-      live: null,
+      role: 'Engineering',
+      company: 'studenthaus.ca',
+      website: 'https://studenthaus.ca',
     },
     {
-      id: 4,
-      title: "Sage AI",
-      description: "Chrome extension using ML to block unproductive pages. Features real-time learning and in-browser model retraining via Flask APIs.",
-      image: "/videos/sage.mp4",
-      github: "https://github.com/khizarrm/sage-ai",
-      live: null,
-    },
-    {
-      id: 5, 
-      title: "Passr", 
-      description: "Web app which optimizes your resume for a JD. Currently at 40+ users.",
-      image: "/videos/passr.mp4",
-      github: "https://github.com/khizarrm/passr",
-      live: "https://passr.vercel.app/", 
-    },
-    {
-      id: 6,
-      title: "Zeez Creations",
-      description: "Website for an interior design studio that brought in 100+ new clients.",
-      image: "/videos/zeez.mp4",
-      github: "https://github.com/khizarrm/zeezfinal",
-      live: "https://zeezcreations.com/",
-    },
-    {
-      id: 7,
-      title: "Plainly",
-      description: "App that converts messy voice notes to clear messages. Created for my mom who doesn't speak English well.",
-      image: "/videos/plainly.mov",
-      github: "https://github.com/khizarrm/plainly",
-      live: "https://plainly.vercel.app",
-    },
-    {
-      id: 8,
-      title: "LeetHub",
-      description: "Recreation of the existing LeetHub extension - built for UI/UX and API practice.",
-      image: "./videos/leethub.mkv",
-      github: "https://github.com/khizarrm/LeetHub",
-      live: null,
+      role: 'Engineering',
+      company: 'wiredin.rw',
+      website: 'https://wiredin.rw',
     }
   ]
 
-  const mobileProjects = projects.filter((project) =>
-    ["Amategeko", "thirdspace", "Books and Brains"].includes(project.title)
-  )
+  const essays = [
+    {
+      slug: 'the-privilege-of-failing',
+      title: 'the privilege of failing',
+    },
+    {
+      slug: 'changing-your-baseline',
+      title: 'changing your baseline',
+    }
+  ]
 
-  const webProjects = projects.filter(
-    (project) => !mobileProjects.includes(project)
-  )
+  const projects = [
+    {
+      title: 'linkd',
+      description: 'ai agent to automate outreach for internships',
+      github: 'https://try-linkd.com',
+    },
+    {
+      title: 'sage ai',
+      description: 'chrome extension using ml to block unproductive pages',
+      github: 'https://github.com/khizarrm/sage-ai',
+    },
+    {
+      title: 'passr',
+      description: 'resume optimizer for job descriptions',
+      github: 'https://github.com/khizarrm/passr',
+    },
+    {
+      title: 'zeez creations',
+      description: 'interior design studio website',
+      github: 'https://github.com/khizarrm/zeezfinal',
+    },
+    {
+      title: 'plainly',
+      description: 'converts voice notes to clear messages',
+      github: 'https://github.com/khizarrm/plainly',
+    },
+    {
+      title: 'leethub',
+      description: 'recreation of leethub extension for practice',
+      github: 'https://github.com/khizarrm/LeetHub',
+    }
+  ]
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-8 py-16">
-        {/* Header Section */}
-        <header className="mb-16">
-          <h1 className="text-large font-bold mb-4">Khizar Malik</h1>
-          <p className="text-medium mb-8">Software Developer.</p>
-          
-          <div className="max-w-3xl">
-            <p className="text-body mb-6">I like to build things. Cansbridge Scholar. 4th year CS @ Carleton University.</p>
-            <p className="text-body mb-6">
-              Currently building AI agents at a startup. 
+    <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="max-w-3xl px-8 py-6">
+
+        {/* Header */}
+        <header className="mb-4">
+          <h1 className="text-3xl font-medium mb-1">Khizar Malik</h1>
+          <p className="text-base text-text-secondary mb-2">software developer</p>
+          <div className="text-sm text-text-secondary max-w-2xl leading-snug">
+            <p className="mb-1">
+              i like to build things.{' '}
+              <a
+                href="https://www.linkedin.com/company/cansbridgescholars/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-text-primary underline transition-colors"
+              >
+                cansbridge scholar
+              </a>
+              . 4th year cs @ carleton university.
             </p>
+            <p>currently building ai agents at a startup.</p>
           </div>
         </header>
 
-        {/* Divider */}
-        <hr className="border-white mb-16" />
-
-        {/* Navigation Section */}
-        <nav className="mb-16">
-          <div className="flex gap-8">
-            <a href="/essays" className="underline-link text-body font-medium">
-              Writings
+        {/* Navigation */}
+        <nav className="mb-4">
+          <div className="flex gap-4 items-center">
+            <a
+              href="https://github.com/khizarrm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="GitHub"
+            >
+              <img
+                src="/icons8-github-64.png"
+                alt="GitHub"
+                width="20"
+                height="20"
+                loading="eager"
+                decoding="sync"
+              />
             </a>
-            <a href="https://github.com/khizarrm" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
-              GitHub
+            <a
+              href="https://www.linkedin.com/in/khizar--malik/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="/LinkedIn_icon.svg.png"
+                alt="LinkedIn"
+                width="20"
+                height="20"
+                loading="eager"
+                decoding="sync"
+              />
             </a>
-            <a href="https://www.linkedin.com/in/khizar--malik/" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
-              LinkedIn
-            </a>
-            <a href="https://x.com/khizar_mm" target="_blank" rel="noopener noreferrer" className="underline-link text-body font-medium">
-              X
+            <a
+              href="https://x.com/khizar_mm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="X (Twitter)"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </a>
           </div>
         </nav>
 
-        {/* Projects Section */}
-        <section id="projects" className="mb-16">
-          <h2 className="text-medium font-bold mb-8">Projects</h2>
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-body font-semibold mb-6">Mobile Apps</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {mobileProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))}
+        {/* Experience Section */}
+        <section className="mb-4">
+          <h2 className="text-lg font-bold mb-1 text-white">experience</h2>
+          <div className="space-y-2">
+            {experiences.map((exp) => (
+              <div key={exp.company}>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${exp.company}&sz=16`}
+                    alt={`${exp.company} favicon`}
+                    width="16"
+                    height="16"
+                    className="flex-shrink-0"
+                  />
+                  <a
+                    href={exp.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                  >
+                    {exp.role}
+                  </a>
+                </div>
+                <div className="ml-6 text-xs text-text-muted">
+                  {exp.company.replace(/\.(so|ca|rw|com)$/, '')}
+                </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-body font-semibold mb-6">Web Apps</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {webProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </section>
+
+        {/* Writings Section */}
+        <section className="mb-4">
+          <h2 className="text-lg font-bold mb-1 text-white">writings</h2>
+          <div className="space-y-0.5">
+            {essays.map((essay) => (
+              <div key={essay.slug}>
+                <a
+                  href={`/essays/${essay.slug}`}
+                  className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                >
+                  {essay.title}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="mb-4">
+          <h2 className="text-lg font-bold mb-1 text-white">projects</h2>
+          <div className="space-y-0.5">
+            {projects.map((project) => (
+              <div key={project.title}>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                >
+                  <span className="font-medium">{project.title}</span>
+                  <span className="text-text-muted"> - {project.description}</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Email */}
+        <div className="mt-4">
+          <a
+            href="mailto:khizarmalik2003@gmail.com"
+            className="text-sm text-text-secondary hover:text-text-primary underline transition-colors"
+          >
+            email me
+          </a>
+        </div>
+
       </div>
     </div>
   )

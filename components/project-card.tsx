@@ -65,15 +65,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card
       ref={cardRef}
-      className={`rounded-2xl border border-gray-800 transition-all duration-300 h-full flex flex-col
-        ${isHovered ? "shadow-md scale-[1.01]" : "shadow-sm"}`}
+      className={`rounded-2xl border border-border-default transition-all duration-300 h-full flex flex-col
+        ${isHovered ? "shadow-md scale-[1.01] border-border-hover" : "shadow-sm"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative h-60 w-full overflow-hidden">
         {/* Loading placeholder */}
         {isLoading && (
-          <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
+          <div className="absolute inset-0 bg-surface animate-pulse flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
@@ -120,17 +120,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         
         {/* Fallback placeholder if not visible yet */}
         {!isVisible && (
-          <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
-            <div className="text-gray-400 text-sm">{project.title}</div>
+          <div className="absolute inset-0 bg-surface flex items-center justify-center">
+            <div className="text-text-muted text-sm">{project.title}</div>
           </div>
         )}
       </div>
 
       <CardContent className="flex-grow p-6">
-        <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
+        <h3 className="text-xl font-semibold text-text-primary mb-3">{project.title}</h3>
 
 
-          <div className="space-y-4 text-gray-300 text-base">
+          <div className="space-y-4 text-text-secondary text-base">
             <p>{project.description}</p>
           </div>
       </CardContent>
@@ -142,20 +142,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 rounded-full border border-gray-700 text-sm text-white hover:bg-gray-800 transition"
+          className="inline-flex items-center px-4 py-2 rounded-full border border-border-default text-sm text-white hover:bg-surface hover:border-border-hover transition"
           >
             <Github className="w-4 h-4 mr-2" />
             GitHub
           </a>
         )}
-        
-        
+
+
         {project.live && (
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 rounded-full border border-gray-700 text-sm text-white hover:bg-gray-800 transition"
+            className="inline-flex items-center px-4 py-2 rounded-full border border-border-default text-sm text-white hover:bg-surface hover:border-border-hover transition"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             Live Demo

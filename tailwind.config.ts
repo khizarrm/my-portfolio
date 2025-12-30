@@ -20,9 +20,15 @@ const config = {
     },
     extend: {
       fontFamily: {
-        jost: ['Jost', 'sans-serif'],
+        'fira-mono': ['Fira Mono', 'monospace'],
       },
       colors: {
+        surface: '#151515',
+        'text-primary': '#e8e8e8',
+        'text-secondary': '#8a8a8a',
+        'text-muted': '#6a6a6a',
+        'border-default': '#2a2a2a',
+        'border-hover': '#3a3a3a',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

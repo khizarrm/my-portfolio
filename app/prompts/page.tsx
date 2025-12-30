@@ -165,7 +165,7 @@ export default function PromptsPage() {
             ← Back to Home
           </Link>
           <h1 className="text-large font-bold mb-4">Prompts</h1>
-          <p className="text-body text-gray-400">
+          <p className="text-body text-text-muted">
             A collection of prompts I use for Cursor. Click the copy button to use them.
           </p>
         </header>
@@ -190,7 +190,7 @@ export default function PromptsPage() {
                       <>
                         <button
                           onClick={() => saveEdit(prompt.id)}
-                          className="px-3 py-1 text-sm bg-white text-black hover:bg-gray-300 transition-colors"
+                          className="px-3 py-1 text-sm bg-white text-black hover:bg-text-secondary transition-colors"
                         >
                           Save
                         </button>
@@ -229,8 +229,8 @@ export default function PromptsPage() {
                     spellCheck={false}
                   />
                 ) : (
-                  <pre className="bg-gray-900 p-4 rounded overflow-x-auto">
-                    <code className="text-sm text-gray-300 font-mono whitespace-pre-wrap">
+                  <pre className="bg-surface p-4 rounded overflow-x-auto">
+                    <code className="text-sm text-text-secondary font-mono whitespace-pre-wrap">
                       {getPromptContent(prompt)}
                     </code>
                   </pre>

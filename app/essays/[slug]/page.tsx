@@ -8,41 +8,41 @@ type EssayPageProps = {
 
 const essays = {
   'the-privilege-of-failing': {
-    title: 'The Privilege of Failing',
-    date: 'December 2024',
+    title: 'the privilege of failing',
+    date: 'december 2024',
     content: `
-      There's a lot of privileges that a person has. This doesn't apply to everyone, but if you're reading this you probably have several privileges you don't think about. For example, access to wifi is a big one, you have an infinite amount of knowledge at your fingertips.
+      there's a lot of privileges that a person has. this doesn't apply to everyone, but if you're reading this you probably have several privileges you don't think about. for example, access to wifi is a big one, you have an infinite amount of knowledge at your fingertips.
 
-      It's quite hard to always remember our privileges. There's so many, but since we're usually around people who are the same as us, we don't realize it. At least that's the case for me. But to be happy and successful, I think, one must understand at least some of the privileges they have to utilize them fully.
+      it's quite hard to always remember our privileges. there's so many, but since we're usually around people who are the same as us, we don't realize it. at least that's the case for me. but to be happy and successful, i think, one must understand at least some of the privileges they have to utilize them fully.
 
-      At this point in my life, at 21, The most important privilege that I have (besides basic living necessities/health) is the ability to fail.
+      at this point in my life, at 21, the most important privilege that i have (besides basic living necessities/health) is the ability to fail.
 
-      I've met quite few people who aren't aware of that privilege. And some of those who do become aware are unwilling to take risks because of the embarrassment and judgement that comes with. But how lucky are they to be able to fail with such little consequence.
+      i've met quite few people who aren't aware of that privilege. and some of those who do become aware are unwilling to take risks because of the embarrassment and judgement that comes with. but how lucky are they to be able to fail with such little consequence.
 
-      There's so many people who can't afford to do so. I've met several friends who can't afford to take the time to learn a new hobby because of other burdens. Or pressures from others to succeed in a certain field, one they might have no interest in. These people can't afford to fail in things of their choosing.
+      there's so many people who can't afford to do so. i've met several friends who can't afford to take the time to learn a new hobby because of other burdens. or pressures from others to succeed in a certain field, one they might have no interest in. these people can't afford to fail in things of their choosing.
 
-      Having the comfort of failing is one of the most critical things needed to succeed. Paul Graham says that to succeed, you must find what you love, which takes discipline and trying a bunch of different things. But to try a bunch of different things, you must be willing to fail. That's what makes the privilege such a gift. Therefore, I think, one should fail as often as they can.
+      having the comfort of failing is one of the most critical things needed to succeed. paul graham says that to succeed, you must find what you love, which takes discipline and trying a bunch of different things. but to try a bunch of different things, you must be willing to fail. that's what makes the privilege such a gift. therefore, i think, one should fail as often as they can.
 
-      There's this one quote I remember hearing a while back: 'a smart man learns from his mistakes, but a wise man learns from those of others'. While this is true, people don't realize that to be wise, you must first be smart.
+      there's this one quote i remember hearing a while back: 'a smart man learns from his mistakes, but a wise man learns from those of others'. while this is true, people don't realize that to be wise, you must first be smart.
     `
   },
   'changing-your-baseline': {
-    title: 'Changing Your Baseline',
-    date: 'September 2025',
+    title: 'changing your baseline',
+    date: 'september 2025',
     content: `
-      When I first started creating my own coding projects like Passr, I blindly depended on AI. I remember making the whole app work fine until I got my first couple of users and it crashed. I spent more time debugging than I did actually prompting Claude to code it. This dependency made me content with having a surface level understanding of things, as it was enough for me to get by with at the time. I was happy with what I could build, whether it was perfect or not. I was proud I had a functioning application. That set my initial baseline of understanding, which was at a fairly high level. A persons baseline in any subject, in this context, refers to how deep of an understanding that person is willing to get of a subject. The lower the baseline, the deeper the understanding.
+      when i first started creating my own coding projects like passr, i blindly depended on ai. i remember making the whole app work fine until i got my first couple of users and it crashed. i spent more time debugging than i did actually prompting claude to code it. this dependency made me content with having a surface level understanding of things, as it was enough for me to get by with at the time. i was happy with what i could build, whether it was perfect or not. i was proud i had a functioning application. that set my initial baseline of understanding, which was at a fairly high level. a persons baseline in any subject, in this context, refers to how deep of an understanding that person is willing to get of a subject. the lower the baseline, the deeper the understanding.
 
-      I then had an internship at a company where I was creating the whole frontend for their LLM chat UI (User Interface). For those nontechnical, I was just implementing the design of the chat in the app. Using AI tools, I did it fairly quickly, and like before, found some issues which I had to later go on and fix. I did this for a while, until I realized my mind wasn’t being simulated at all during work. I had no idea what I was doing, just asking a bot to write code for me. Consulting a friend, I decided to completely stop using AI. I even switched to vim, which is a keyboard only text editor known to have quite a steep learning curve. This set my second baseline, which was significantly lower level than the previous one I had set for myself.
+      i then had an internship at a company where i was creating the whole frontend for their llm chat ui (user interface). for those nontechnical, i was just implementing the design of the chat in the app. using ai tools, i did it fairly quickly, and like before, found some issues which i had to later go on and fix. i did this for a while, until i realized my mind wasn't being simulated at all during work. i had no idea what i was doing, just asking a bot to write code for me. consulting a friend, i decided to completely stop using ai. i even switched to vim, which is a keyboard only text editor known to have quite a steep learning curve. this set my second baseline, which was significantly lower level than the previous one i had set for myself.
 
-      Using vim was an excellent decision, it forced me to understand the code deeply. I remember creating a new component by writing each line of code myself since I didn’t know how to paste yet. While frustrating at first, I was then able to understand what each line of code does, where to locate issues, etc. I moved a lot faster than I had when I was completely dependent on AI. It was a satisfying feeling to deeply understand how something works. I later had to vibe code an app for another project, which I was able to do a lot better since I understood a lot more, but I didn’t feel truly satisfied since I used AI blindly for a lot of it. It also made me realize that AI coding isn’t that good. Or maybe I just hadn’t been using it right. Either way, since my baseline for understanding code was a lot lower, I knew I could do a lot better and wasn’t content with what I had, still having the drive to understand it even more.
+      using vim was an excellent decision, it forced me to understand the code deeply. i remember creating a new component by writing each line of code myself since i didn't know how to paste yet. while frustrating at first, i was then able to understand what each line of code does, where to locate issues, etc. i moved a lot faster than i had when i was completely dependent on ai. it was a satisfying feeling to deeply understand how something works. i later had to vibe code an app for another project, which i was able to do a lot better since i understood a lot more, but i didn't feel truly satisfied since i used ai blindly for a lot of it. it also made me realize that ai coding isn't that good. or maybe i just hadn't been using it right. either way, since my baseline for understanding code was a lot lower, i knew i could do a lot better and wasn't content with what i had, still having the drive to understand it even more.
 
-      I find it quite extraordinary, by just consistency applying myself to something difficult for 2 weeks, my whole perspective and mindset on coding and learning itself changed. It’s quite simple to be good at something. You just need to grasp that feeling once, and thats enough. As soon as you realize how good something can be, just one time, it makes it hard to go back to being content with how things were. Not everything needs to be understood at a deep level. But for the things that I do want to understand, or the things I’m curious about, I’ll try to understand them a lot more deeply now.
+      i find it quite extraordinary, by just consistency applying myself to something difficult for 2 weeks, my whole perspective and mindset on coding and learning itself changed. it's quite simple to be good at something. you just need to grasp that feeling once, and thats enough. as soon as you realize how good something can be, just one time, it makes it hard to go back to being content with how things were. not everything needs to be understood at a deep level. but for the things that i do want to understand, or the things i'm curious about, i'll try to understand them a lot more deeply now.
 
-      It’s fascinating how significant of an impact you can have on your life with just a small amount of hard work. It’s super linear, applying it in one area of knowledge makes you want to apply it to others. Ever since I shifted that baseline, I’ve been less interested in things like doomscrolling and feel a lot more simulated spending my time doing deep work, regardless of the subject.
+      it's fascinating how significant of an impact you can have on your life with just a small amount of hard work. it's super linear, applying it in one area of knowledge makes you want to apply it to others. ever since i shifted that baseline, i've been less interested in things like doomscrolling and feel a lot more simulated spending my time doing deep work, regardless of the subject.
 
-      Peter Theil, founder of PayPal, once mentioned that excellent entrepreneurs are polymaths. A polymath is something who has expertise in a wide range of subjects. Mark Zuckenberg and Lex Fridman are some examples, both being excellent at not only tech but jujutsu as well. I think they might have started their journeys in the same way, having that feeling of success just once.
+      peter theil, founder of paypal, once mentioned that excellent entrepreneurs are polymaths. a polymath is something who has expertise in a wide range of subjects. mark zuckenberg and lex fridman are some examples, both being excellent at not only tech but jujutsu as well. i think they might have started their journeys in the same way, having that feeling of success just once.
 
-      So, in short, I think it’s important to keep your baseline in check. My dad once told me a quote - ‘Nothing Succeeds like success’. I think that’s very true, especially in this case. Changing your baseline is quite hard, takes some work. But you just need to do it once, and then the benefits are infinite. Superlinear.
+      so, in short, i think it's important to keep your baseline in check. my dad once told me a quote - 'nothing succeeds like success'. i think that's very true, especially in this case. changing your baseline is quite hard, takes some work. but you just need to do it once, and then the benefits are infinite. superlinear.
     `
   }
 }
@@ -53,39 +53,44 @@ export default async function EssayPage({ params }: EssayPageProps) {
 
   if (!essay) {
     return (
-      <div className="min-h-screen bg-black text-white">
-        <div className="max-w-4xl mx-auto px-8 py-16">
-          <Link href="/" className="underline-link text-body mb-8 inline-block">
-            ← Back to Home
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="max-w-3xl px-8 py-6">
+          <Link
+            href="/"
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors inline-block mb-6"
+          >
+            ← back
           </Link>
-          <hr className="border-white mb-8" />
-          <h1 className="text-large font-bold mb-8">Writing Not Found</h1>
-          <p className="text-body">The writing you're looking for doesn't exist.</p>
+          <h1 className="text-3xl font-medium mb-4">writing not found</h1>
+          <p className="text-sm text-text-secondary">the writing you're looking for doesn't exist.</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-8 py-16">
-        {/* Header Section */}
-        <header className="mb-16">
-          <Link href="/essays" className="underline-link text-body mb-8 inline-block">
-            ← Back to Writings
-          </Link>
-          <h1 className="text-large font-bold mb-4">{essay.title}</h1>
-          <p className="text-body text-gray-500">{essay.date}</p>
+    <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="max-w-3xl px-8 py-6">
+
+        {/* Back Link */}
+        <Link
+          href="/"
+          className="text-sm text-text-secondary hover:text-text-primary transition-colors inline-block mb-6"
+        >
+          ← back
+        </Link>
+
+        {/* Header */}
+        <header className="mb-6">
+          <h1 className="text-3xl font-medium mb-2">{essay.title}</h1>
+          <p className="text-sm text-text-muted">{essay.date}</p>
         </header>
 
-        {/* Divider */}
-        <hr className="border-white mb-16" />
-        
         {/* Article Content */}
-        <article className="max-w-3xl">
-          <div className="space-y-6">
+        <article className="max-w-2xl">
+          <div className="space-y-4">
             {essay.content.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-body leading-relaxed text-white">
+              <p key={index} className="text-sm text-text-secondary leading-relaxed">
                 {paragraph.trim()}
               </p>
             ))}

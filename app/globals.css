@@ -3,22 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: #0a0a0a;
+    --surface: #151515;
+    --border: #2a2a2a;
+    --border-hover: #3a3a3a;
+    --text-primary: #e8e8e8;
+    --text-secondary: #8a8a8a;
+    --text-muted: #6a6a6a;
+  }
+
   * {
     @apply border-border;
   }
-  
+
   body {
-    @apply bg-black text-white font-jost antialiased;
+    @apply bg-black text-white font-fira-mono antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-jost;
+    @apply font-fira-mono;
   }
 }
 
 @layer components {
   .underline-link {
-    @apply border-b border-white pb-1 hover:border-gray-400 transition-colors duration-200;
+    @apply border-b border-white pb-1 hover:border-text-secondary transition-colors duration-200;
   }
   
   .text-large {
