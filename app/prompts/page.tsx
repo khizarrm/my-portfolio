@@ -75,7 +75,7 @@ Be specific. Be brief.`
   {
     id: 'initialize',
     title: 'INITIALIZE',
-    content: `Task: Initialize understanding of the codebase.
+    content: `Task: Initialize understanding of the [FEATURE/BUG]. The user will then ask you questions relating to this topic.
 
 Instructions:
 1. Examine project structure:
@@ -94,7 +94,7 @@ Instructions:
     * Import styles (absolute/relative, aliases)
     * Code style (classes/functions, declarative/imperative)
 
-Output: Once complete, respond with only the word "Ready."`
+Constraints: **Do not make an md file, just clarify your understanding of it and reply with the word 'Ready'**`
   },
   {
     id: 'pr',
@@ -108,6 +108,22 @@ Do not just list file changes. Instead, structure the response into:
 3. **Verification:** How to verify this works (tests or manual steps).
 
 Keep it concise and focused on the decision-making process.`
+  },
+  {
+    id: 'summary',
+    title: 'SUMMARY',
+    content: `Summarize these changes as a modular "Plan Section" for a larger PR.
+
+Structure the output exactly like this so I can copy-paste it:
+
+**[Feature/Module Name]**
+* **Intent:** One sentence on what this specific chunk solves.
+* **Execution Steps:**
+  1. \`[Action]\` (e.g., Created X component) - *Why: [Reason]*
+  2. \`[Action]\` (e.g., Updated Y hook) - *Why: [Reason]*
+  3. \`[Action]\` (e.g., Added Z test) - *Why: [Reason]*
+
+Focus on the *logical flow* of changes, not just file names.`
   }
 ]
 
