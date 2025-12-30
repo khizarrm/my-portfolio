@@ -247,13 +247,19 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Email */}
-        <div className="mt-4">
+        {/* Email & Prompts */}
+        <div className="mt-4 flex gap-4">
           <a
             href="mailto:khizarmalik2003@gmail.com"
             className="text-sm text-text-secondary hover:text-teal underline transition-colors"
           >
             email me
+          </a>
+          <a
+            href="/prompts"
+            className="text-sm text-text-secondary hover:text-teal underline transition-colors"
+          >
+            prompts
           </a>
         </div>
 

@@ -157,87 +157,79 @@ export default function PromptsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-8 py-16">
-        {/* Header Section */}
-        <header className="mb-16">
-          <Link href="/" className="underline-link text-body mb-8 inline-block">
-            ← Back to Home
-          </Link>
-          <h1 className="text-large font-bold mb-4">Prompts</h1>
-          <p className="text-body text-text-muted">
-            A collection of prompts I use for Cursor. Click the copy button to use them.
+    <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="max-w-3xl px-8 py-6">
+        {/* Back Link */}
+        <Link
+          href="/"
+          className="text-sm text-text-secondary hover:text-teal transition-colors inline-block mb-6"
+        >
+          ← back
+        </Link>
+
+        {/* Header */}
+        <header className="mb-6">
+          <h1 className="text-3xl font-medium mb-2">prompts</h1>
+          <p className="text-sm text-text-secondary">
+            a collection of prompts i use for cursor
           </p>
         </header>
 
-        {/* Divider */}
-        <hr className="border-white mb-16" />
-
         {/* Prompts Section */}
-        <section>
-          <div className="space-y-12">
-            {prompts.map((prompt) => (
-              <div key={prompt.id}>
-                <div className="flex items-center justify-between mb-3">
-                  <h2
-                    className="text-medium font-bold select-none"
-                    onClick={() => handleTitleClick(prompt.id)}
-                  >
-                    {prompt.title}
-                  </h2>
-                  <div className="flex gap-2">
-                    {editingId === prompt.id && (
-                      <>
-                        <button
-                          onClick={() => saveEdit(prompt.id)}
-                          className="px-3 py-1 text-sm bg-white text-black hover:bg-text-secondary transition-colors"
-                        >
-                          Save
-                        </button>
-                        <button
-                          onClick={() => cancelEdit(prompt.id)}
-                          className="px-3 py-1 text-sm border border-white hover:bg-white hover:text-black transition-colors"
-                        >
-                          Cancel
-                        </button>
-                      </>
-                    )}
-                    <button
-                      onClick={() => copyToClipboard(getPromptContent(prompt), prompt.id)}
-                      className="flex items-center gap-2 px-3 py-1 text-sm border border-white hover:bg-white hover:text-black transition-colors"
-                      aria-label={`Copy ${prompt.title} prompt`}
-                    >
-                      {copiedId === prompt.id ? (
-                        <>
-                          <Check size={14} />
-                          <span>Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy size={14} />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-                {editingId === prompt.id ? (
+        <section className="space-y-6">
+          {prompts.map((prompt) => (
+            <div key={prompt.id}>
+              <h2
+                className="text-base font-bold mb-2 select-none"
+                onClick={() => handleTitleClick(prompt.id)}
+              >
+                {prompt.title.toLowerCase()}
+              </h2>
+              {editingId === prompt.id ? (
+                <div>
                   <textarea
                     value={getPromptContent(prompt)}
                     onChange={(e) => handleContentChange(prompt.id, e.target.value)}
-                    className="w-full min-h-[300px] bg-yellow-900 bg-opacity-20 border-2 border-yellow-500 p-4 rounded text-sm text-white font-mono resize-y"
+                    className="w-full min-h-[300px] bg-slate-800 border border-slate-700 p-4 rounded-lg text-sm text-white font-mono resize-y"
                     spellCheck={false}
                   />
-                ) : (
-                  <pre className="bg-surface p-4 rounded overflow-x-auto">
-                    <code className="text-sm text-text-secondary font-mono whitespace-pre-wrap">
+                  <div className="flex gap-2 mt-2">
+                    <button
+                      onClick={() => saveEdit(prompt.id)}
+                      className="px-3 py-1 text-sm bg-white text-black hover:bg-text-secondary transition-colors rounded"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={() => cancelEdit(prompt.id)}
+                      className="px-3 py-1 text-sm border border-white hover:bg-white hover:text-black transition-colors rounded"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative">
+                  <button
+                    onClick={() => copyToClipboard(getPromptContent(prompt), prompt.id)}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                    aria-label={`Copy ${prompt.title} prompt`}
+                  >
+                    {copiedId === prompt.id ? (
+                      <Check size={18} />
+                    ) : (
+                      <Copy size={18} />
+                    )}
+                  </button>
+                  <pre className="bg-zinc-950 border border-zinc-800 p-5 pr-16 rounded-2xl overflow-x-auto">
+                    <code className="text-sm text-gray-300 font-mono whitespace-pre-wrap">
                       {getPromptContent(prompt)}
                     </code>
                   </pre>
-                )}
-              </div>
-            ))}
-          </div>
+                </div>
+              )}
+            </div>
+          ))}
         </section>
       </div>
     </div>
