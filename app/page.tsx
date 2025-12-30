@@ -71,56 +71,63 @@ export default function Portfolio() {
       <div className="max-w-3xl px-8 py-6">
 
         {/* Header */}
-        <header className="mb-4">
-          <h1 className="text-3xl font-medium mb-1">Khizar Malik</h1>
-          <p className="text-base text-text-secondary mb-2">software developer</p>
-          <div className="text-sm text-text-secondary max-w-2xl leading-snug">
-            <p className="mb-1">
-              i like to build things.{' '}
-              <a
-                href="https://www.linkedin.com/company/cansbridgescholars/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-teal underline transition-colors"
-              >
-                cansbridge scholar
-              </a>
-              . 4th year cs @ carleton university.
-            </p>
-            <p>
-              currently building{' '}
-              <a
-                href="https://try-linkd.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-teal underline transition-colors"
-              >
-                linkd
-              </a>
-              , an agent to help students find internships.
-            </p>
-            <p>
-              i also like to take{' '}
-              <a
-                href="https://www.instagram.com/khizar.pics/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-teal underline transition-colors"
-              >
-                pics
-              </a>
-              {' '}and{' '}
-              <a
-                href="https://www.youtube.com/channel/UCSvcxp1CzJCh-Y-sACtrqtQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-teal underline transition-colors"
-              >
-                vlogs
-              </a>
-              {' '}from time to time
-            </p>
+        <header className="mb-4 flex gap-6 items-start">
+          <div className="flex-1">
+            <h1 className="text-3xl font-medium mb-1">Khizar Malik</h1>
+            <p className="text-base text-text-secondary mb-2">software developer</p>
+            <div className="text-sm text-text-secondary max-w-2xl leading-snug">
+              <p className="mb-1">
+                i like to build things.{' '}
+                <a
+                  href="https://www.linkedin.com/company/cansbridgescholars/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  cansbridge scholar
+                </a>
+                . 4th year cs @ carleton university.
+              </p>
+              <p>
+                currently building{' '}
+                <a
+                  href="https://try-linkd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  linkd
+                </a>
+                , an agent to help students find internships.
+              </p>
+              <p>
+                i also like to take{' '}
+                <a
+                  href="https://www.instagram.com/khizar.pics/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  pics
+                </a>
+                {' '}and{' '}
+                <a
+                  href="https://www.youtube.com/channel/UCSvcxp1CzJCh-Y-sACtrqtQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  vlogs
+                </a>
+                {' '}from time to time
+              </p>
+            </div>
           </div>
+          <img
+            src="/profile.JPG"
+            alt="Khizar Malik"
+            className="w-32 h-auto"
+          />
         </header>
 
         {/* Navigation */}
