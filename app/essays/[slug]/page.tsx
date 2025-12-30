@@ -57,7 +57,7 @@ export default async function EssayPage({ params }: EssayPageProps) {
         <div className="max-w-3xl px-8 py-6">
           <Link
             href="/"
-            className="text-sm text-text-secondary hover:text-text-primary transition-colors inline-block mb-6"
+            className="text-sm text-text-secondary hover:text-teal transition-colors inline-block mb-6"
           >
             ← back
           </Link>
@@ -75,7 +75,7 @@ export default async function EssayPage({ params }: EssayPageProps) {
         {/* Back Link */}
         <Link
           href="/"
-          className="text-sm text-text-secondary hover:text-text-primary transition-colors inline-block mb-6"
+          className="text-sm text-text-secondary hover:text-teal transition-colors inline-block mb-6"
         >
           ← back
         </Link>

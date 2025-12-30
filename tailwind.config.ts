@@ -27,6 +27,7 @@ const config = {
         'text-primary': '#e8e8e8',
         'text-secondary': '#8a8a8a',
         'text-muted': '#6a6a6a',
+        'teal': '#a0f7ed',
         'border-default': '#2a2a2a',
         'border-hover': '#3a3a3a',
         border: "hsl(var(--border))",

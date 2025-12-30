@@ -28,7 +28,7 @@
 
 @layer components {
   .underline-link {
-    @apply border-b border-white pb-1 hover:border-text-secondary transition-colors duration-200;
+    @apply border-b border-white pb-1 hover:border-teal transition-colors duration-200;
   }
   
   .text-large {

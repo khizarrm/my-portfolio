@@ -81,13 +81,45 @@ export default function Portfolio() {
                 href="https://www.linkedin.com/company/cansbridgescholars/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-text-primary underline transition-colors"
+                className="text-text-secondary hover:text-teal underline transition-colors"
               >
                 cansbridge scholar
               </a>
               . 4th year cs @ carleton university.
             </p>
-            <p>currently building ai agents at a startup.</p>
+            <p>
+              currently building{' '}
+              <a
+                href="https://try-linkd.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-teal underline transition-colors"
+              >
+                linkd
+              </a>
+              , an agent to help students find internships.
+            </p>
+            <p>
+              i also like to take{' '}
+              <a
+                href="https://www.instagram.com/khizar.pics/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-teal underline transition-colors"
+              >
+                pics
+              </a>
+              {' '}and{' '}
+              <a
+                href="https://www.youtube.com/channel/UCSvcxp1CzJCh-Y-sACtrqtQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-teal underline transition-colors"
+              >
+                vlogs
+              </a>
+              {' '}from time to time
+            </p>
           </div>
         </header>
 
@@ -158,7 +190,7 @@ export default function Portfolio() {
                     href={exp.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-sm text-text-secondary hover:text-teal transition-colors"
                   >
                     {exp.role}
                   </a>
@@ -179,7 +211,7 @@ export default function Portfolio() {
               <div key={essay.slug}>
                 <a
                   href={`/essays/${essay.slug}`}
-                  className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                  className="text-sm text-text-secondary hover:text-teal transition-colors"
                 >
                   {essay.title}
                 </a>
@@ -198,7 +230,7 @@ export default function Portfolio() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                  className="text-sm text-text-secondary hover:text-teal transition-colors"
                 >
                   <span className="font-medium">{project.title}</span>
                   <span className="text-text-muted"> - {project.description}</span>
@@ -212,7 +244,7 @@ export default function Portfolio() {
         <div className="mt-4">
           <a
             href="mailto:khizarmalik2003@gmail.com"
-            className="text-sm text-text-secondary hover:text-text-primary underline transition-colors"
+            className="text-sm text-text-secondary hover:text-teal underline transition-colors"
           >
             email me
           </a>
