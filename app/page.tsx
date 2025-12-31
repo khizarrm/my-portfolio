@@ -30,6 +30,10 @@ export default function Portfolio() {
     {
       slug: 'changing-your-baseline',
       title: 'changing your baseline',
+    },
+    {
+      slug: 'how-i-code-with-ai',
+      title: 'how i code with AI',
     }
   ]
 
