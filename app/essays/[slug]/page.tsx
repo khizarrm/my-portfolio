@@ -58,7 +58,7 @@ const essays = {
 
       Most of the content in this essay is inspired by Dex Horthy's AI engineers lecture, a 20 min watch, which you can view [here](https://bagrounds.org/videos/no-vibes-allowed-solving-hard-problems-in-complex-codebases-dex-horthy-humanlayer).
 
-      To start, it's important to note that everyone has a different way of coding, so my approach might not work for you. I do however think that it's a good place to start. I also don't think people depend on a really good model, rather just really good prompts. For all prompts below, you'd get reasonable results using Claude Sonnet 3.5, but I'll also specify which models work best for each of those too (for when you haven't hit your cursor limits).
+      To start, it's important to note that everyone has a different way of coding, so my approach might not work for you. I do however think that it's a good place to start. I also don't think people need to depend on a really good model, rather just really good prompts. For all prompts below, you'd get reasonable results using Claude Sonnet 3.5, but I'll also specify which models work best for each of those too (for when you haven't hit your cursor limits).
 
       Context engineering is how you manage the AI's mental state, what it knows. In my own use case, I keep it stateless, so it knows nothing about the codebase to start. It's my responsibility to feed it all it needs. A lot of tokens are saved this way. Additionally, I try not to go above 40% of my context window, as that's when the AI starts to dumb down.
 
