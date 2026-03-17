@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        'fira-mono': ['Fira Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         surface: '#151515',

@@ -1,3 +1,5 @@
+import RecordingPlayer from '@/components/recording-player'
+
 export default function Portfolio() {
   const experiences = [
     {
@@ -44,43 +46,23 @@ export default function Portfolio() {
       github: 'https://try-linkd.com',
     },
     {
-      title: 'sage ai',
-      description: 'chrome extension using ml to block unproductive pages',
-      github: 'https://github.com/khizarrm/sage-ai',
+      title: 'thirdspace',
+      description: 'collaborative workspace platform',
+      github: 'https://thirdspace.so',
     },
-    {
-      title: 'passr',
-      description: 'resume optimizer for job descriptions',
-      github: 'https://github.com/khizarrm/passr',
-    },
-    {
-      title: 'zeez creations',
-      description: 'interior design studio website',
-      github: 'https://github.com/khizarrm/zeezfinal',
-    },
-    {
-      title: 'plainly',
-      description: 'converts voice notes to clear messages',
-      github: 'https://github.com/khizarrm/plainly',
-    },
-    {
-      title: 'leethub',
-      description: 'recreation of leethub extension for practice',
-      github: 'https://github.com/khizarrm/LeetHub',
-    }
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="max-w-3xl px-8 py-6">
+    <div className="min-h-screen bg-black text-white flex justify-center">
+      <div className="w-full max-w-3xl px-8 py-16">
 
         {/* Header */}
         <header className="mb-4 flex gap-6 items-start">
           <div className="flex-1">
             <h1 className="text-3xl font-medium mb-1">Khizar Malik</h1>
             <p className="text-base text-text-secondary mb-2">software developer</p>
-            <div className="text-sm text-text-secondary max-w-2xl leading-snug">
-              <p className="mb-1">
+            <div className="text-sm text-text-secondary max-w-2xl leading-relaxed space-y-2">
+              <p>
                 i like to build things.{' '}
                 <a
                   href="https://www.linkedin.com/company/cansbridgescholars/"
@@ -125,6 +107,51 @@ export default function Portfolio() {
                 </a>
                 {' '}from time to time
               </p>
+              <div className="flex gap-4 items-center mt-2">
+                <a
+                  href="https://github.com/khizarrm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="GitHub"
+                >
+                  <img
+                    src="/icons8-github-64.png"
+                    alt="GitHub"
+                    width="20"
+                    height="20"
+                    loading="eager"
+                    decoding="sync"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/khizar--malik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="LinkedIn"
+                >
+                  <img
+                    src="/LinkedIn_icon.svg.png"
+                    alt="LinkedIn"
+                    width="20"
+                    height="20"
+                    loading="eager"
+                    decoding="sync"
+                  />
+                </a>
+                <a
+                  href="https://x.com/khizar_mm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="X (Twitter)"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
           <img
@@ -133,55 +160,6 @@ export default function Portfolio() {
             className="w-32 h-auto"
           />
         </header>
-
-        {/* Navigation */}
-        <nav className="mb-4">
-          <div className="flex gap-4 items-center">
-            <a
-              href="https://github.com/khizarrm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-              aria-label="GitHub"
-            >
-              <img
-                src="/icons8-github-64.png"
-                alt="GitHub"
-                width="20"
-                height="20"
-                loading="eager"
-                decoding="sync"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/khizar--malik/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-              aria-label="LinkedIn"
-            >
-              <img
-                src="/LinkedIn_icon.svg.png"
-                alt="LinkedIn"
-                width="20"
-                height="20"
-                loading="eager"
-                decoding="sync"
-              />
-            </a>
-            <a
-              href="https://x.com/khizar_mm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-              aria-label="X (Twitter)"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-          </div>
-        </nav>
 
         {/* Experience Section */}
         <section className="mb-4">
@@ -228,6 +206,18 @@ export default function Portfolio() {
                 </a>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Conversations Section */}
+        <section className="mb-4">
+          <h2 className="text-lg font-bold mb-1 text-white">conversations</h2>
+          <div className="space-y-1">
+            <RecordingPlayer
+              title="ito n khizar"
+              audioSrc="/recordings/ito-n-khizar.m4a"
+              subtitlesSrc="/recordings/ito-n-khizar-subtitles.json"
+            />
           </div>
         </section>
 
