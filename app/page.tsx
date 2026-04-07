@@ -41,13 +41,15 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'linkd',
-      description: 'ai agent to automate outreach for internships',
-      github: 'https://try-linkd.com',
+      title: 'sema',
+      description: 'automate outreach for oppurtunities',
+      details: '300+ users, 1 paying user',
+      github: 'https://try-sema.com',
     },
     {
       title: 'thirdspace',
-      description: 'collaborative workspace platform',
+      description: 'bereal but irl',
+      details: '1k+ users, top 70 in app store',
       github: 'https://thirdspace.so',
     },
   ]
@@ -59,8 +61,7 @@ export default function Portfolio() {
         {/* Header */}
         <header className="mb-4 flex gap-6 items-start">
           <div className="flex-1">
-            <h1 className="text-3xl font-medium mb-1">Khizar Malik</h1>
-            <p className="text-base text-text-secondary mb-2">software developer</p>
+            <h1 className="text-3xl font-medium mb-2">Khizar Malik</h1>
             <div className="text-sm text-text-secondary max-w-2xl leading-relaxed space-y-2">
               <p>
                 i like to build things.{' '}
@@ -75,16 +76,37 @@ export default function Portfolio() {
                 . 4th year cs @ carleton university.
               </p>
               <p>
-                currently building{' '}
+                currently learning ruby at{' '}
                 <a
-                  href="https://try-linkd.com"
+                  href="https://fullscript.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-text-secondary hover:text-teal underline transition-colors"
                 >
-                  linkd
+                  fullscript
                 </a>
-                , an agent to help students find internships.
+                {' '}and building{' '}
+                <a
+                  href="https://try-sema.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  sema
+                </a>
+                .
+              </p>
+              <p>
+                i also recently started a{' '}
+                <a
+                  href="https://www.instagram.com/desirun_ottawa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-teal underline transition-colors"
+                >
+                  run club
+                </a>
+                .
               </p>
               <p>
                 i also like to take{' '}
@@ -236,6 +258,11 @@ export default function Portfolio() {
                   <span className="font-medium">{project.title}</span>
                   <span className="text-text-muted"> - {project.description}</span>
                 </a>
+                {project.details && (
+                  <div className="ml-4 text-xs text-text-muted">
+                    - {project.details}
+                  </div>
+                )}
               </div>
             ))}
           </div>
