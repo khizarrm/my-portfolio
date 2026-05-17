@@ -26,6 +26,10 @@ export default function Portfolio() {
 
   const essays = [
     {
+      slug: 'motivations',
+      title: 'motivations',
+    },
+    {
       slug: 'the-privilege-of-failing',
       title: 'the privilege of failing',
     },
@@ -265,6 +269,19 @@ export default function Portfolio() {
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Components Section */}
+        <section className="mb-4">
+          <div className="flex items-baseline gap-2">
+            <h2 className="text-lg font-bold text-white">components</h2>
+            <a
+              href="/components"
+              className="text-sm text-text-secondary hover:text-teal transition-colors"
+            >
+              - ui i&apos;ve built and want to share
+            </a>
           </div>
         </section>
 

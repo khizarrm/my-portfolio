@@ -12,6 +12,27 @@ type EssayPageProps = {
 }
 
 const essays = {
+  'motivations': {
+    title: 'motivations',
+    date: 'may 2026',
+    content: `
+      I was recently asked by a few people what my motivations were for what I do. My usual answer is curiosity of what I'm capable of, it drives me to explore almost anything, but I've been giving it more thought, and my motivations lay a lot deeper than just curiosity. This is more of a personal essay explaining my motivations. Knowing why I do what I do makes it easier for me to do it.
+
+      Above all, I value relationships the most. I was raised throughout Africa my whole life, where communities are tight knit. Being in a brown family instilled the value of relationships in me too. I'm glad I can depend on those around me when I need to, and that makes my life very bright. I'm grateful I have this as a core value, everything else I do directly corresponds to building stronger relationships.
+
+      When I do things, I learn more about myself through them as I experience emotions which I previously haven't. I've recently been building [sema](https://try-sema.com), and the team is slowly growing. It's so fascinating to see the different emotions I experience as I lead, I'm realizing more of where my strengths are and where I'm lacking. I'm learning more about me, which in itself drives me to do better, and as I learn more about myself, I am more capable of understanding those around me on a deeper level, which then strengthens my relationships.
+
+      I sometimes try and learn things with the intent of loving better. I don't always do it, but when someone I love is good at something, I'll try to learn a bit of the logistics of their craft so I can appreciate them better. One of my friends is an excellent football player, and I've been able to admire his skills a lot more through getting better at the sport myself. It let me see him in a perspective I wouldn't have been able to before.
+
+      Beyond that, through the work I've done, I've come to just enjoy experiencing so many new things. It's so rewarding to feel new things that I haven't felt before, apply learnings I learnt which I didn't think I was learning, but at the time I was. And to just see growth, no matter how small, and being able to share that experience with people who are willing to listen and grow with you. I have a friend who recently started DJ'ing, and it's been a privilege to watch him feel the same appreciation of growth and art that I do. I'm grateful that I can be there to experience that with him. It feels like that's how life is meant to be, just doing things and having people to share them with.
+
+      I've only been thinking this type of way somewhat recently, within the past year or so. I'm happy with this way of thinking, it's allowed me to be less harsh on myself, but also made work a lot easier. If I am working to live, and to experience, and to build relationships, then I would not mind if this kind of work is my life.
+
+      I used to always see people say 'the journey is the process'. I think I am slowly beginning to understand that now.
+
+      There's this zen saying - "Before enlightenment, chop wood, carry water. After enlightenment, chop wood, carry water." I am by no means enlightened, but I am enjoying carrying water and chopping wood a lot more than I once was.
+    `
+  },
   'the-privilege-of-failing': {
     title: 'the privilege of failing',
     date: 'december 2024',
@@ -304,11 +325,16 @@ export default function EssayPage({ params }: EssayPageProps) {
                   <p key={`${partIndex}-${paraIndex}`} className="text-sm text-white leading-relaxed font-light">
                     {linkParts.map((linkPart, linkPartIndex) => {
                       if (linkPart.type === 'link') {
+                        const isSemaLink = linkPart.href.includes('try-sema.com')
                         return (
                           <Link
                             key={linkPartIndex}
                             href={linkPart.href}
-                            className="text-white hover:text-teal underline transition-colors"
+                            className={
+                              isSemaLink
+                                ? 'text-[#1d4ed8] hover:text-[#2563eb] underline transition-colors font-medium'
+                                : 'text-white hover:text-teal underline transition-colors'
+                            }
                           >
                             {linkPart.text}
                           </Link>
