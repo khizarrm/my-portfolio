@@ -299,6 +299,12 @@ export default function Portfolio() {
           >
             prompts
           </a>
+          <a
+            href="/ugc"
+            className="text-sm text-text-secondary hover:text-teal underline transition-colors"
+          >
+            ugc
+          </a>
         </div>
 
       </div>
