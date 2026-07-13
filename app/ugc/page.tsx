@@ -8,6 +8,8 @@ export default function UGC() {
     { id: 2, title: 'video 2', src: '/ugc/video-2.mp4' },
     { id: 3, title: 'video 3', src: '/ugc/video-3.mp4' },
     { id: 4, title: 'video 4', src: '/ugc/video-4.mp4' },
+    { id: 5, title: 'video 5', src: '/ugc/video-5.mp4' },
+    { id: 6, title: 'video 6', src: '/ugc/video-6.mp4' },
   ]
 
   return (
