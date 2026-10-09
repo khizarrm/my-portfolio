@@ -1,47 +1,404 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Theme tokens. The site is dark only. */
+:root {
+  --accent-base: #1f5bb5;
+  --ease-panel: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  color-scheme: dark;
+  --bg: #0b0b0c;
+  --fg: #f4f4f2;
+  --panel-border: #3a3a3e;
+  --rule: #26262a;
+  --frame: #141416;
+  --accent: color-mix(in oklch, var(--accent-base) 60%, white);
+}
+
+@theme inline {
+  --breakpoint-desk: 900px; /* keep in sync with MOBILE_QUERY in lib/useMediaQuery.ts */
+  --font-sans: var(--font-inter-tight), Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-rule: var(--rule);
+  --color-frame: var(--frame);
+  --color-accent: var(--accent);
+  --color-panel-border: var(--panel-border);
+}
 
 @layer base {
-  :root {
-    --background: #0a0a0a;
-    --surface: #151515;
-    --border: #2a2a2a;
-    --border-hover: #3a3a3a;
-    --text-primary: #e8e8e8;
-    --text-secondary: #8a8a8a;
-    --text-muted: #6a6a6a;
-  }
-
-  * {
-    @apply border-border;
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-black text-white font-sans antialiased;
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans;
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: opacity 0.15s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+
+  ::selection {
+    background: var(--accent-base);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Headings get programmatic focus for screen readers; no ring for that. */
+  [data-panel-heading]:focus {
+    outline: none;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
   }
 }
 
 @layer components {
-  .underline-link {
-    @apply border-b border-white pb-1 hover:border-teal transition-colors duration-200;
+  .panel-link {
+    cursor: pointer;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
   }
-  
-  .text-large {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+
+  .list-row-link:hover {
+    color: var(--accent);
+    opacity: 1;
   }
-  
-  .text-medium {
-    @apply text-xl md:text-2xl;
+
+  /* Small icon-only control with a comfortable hit area around an 18px glyph. */
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
   }
-  
-  .text-body {
-    @apply text-base md:text-lg leading-relaxed;
+
+  .social-link {
+    display: flex;
+    color: inherit;
+    opacity: 0.9;
+    transition:
+      opacity 0.15s,
+      transform 0.15s;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline-color: #ffffff;
+    }
   }
-  
+
+  /*
+   * Home column. On desktop it scales as one unit with the viewport height, and everything inside
+   * is sized in cqi (column width). The intro is taller than the screen, so main scrolls under the
+   * sticky name + hero (.home-header). The column's own gap uses --home-width, since its own cqi
+   * would resolve against main. --home-ratio tunes the size: higher makes the column narrower.
+   */
+  .home-column {
+    @variant desk {
+      --home-ratio: 1.27;
+      --home-gap: calc(var(--home-width) * 0.05);
+      container-type: inline-size;
+      --home-width: min(640px, 100cqw - 48px, (100cqh - 96px) / var(--home-ratio));
+      width: var(--home-width);
+      margin-block: 48px;
+    }
+  }
+
+  /*
+   * Name + hero, pinned to the top while the intro scrolls. The page-colored band above (pulled
+   * into the column's top margin) and below (cancelled by the negative margin) hides text scrolling
+   * underneath, including behind the hero's rounded corners.
+   */
+  .home-header {
+    @variant desk {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      /* 5cqi here is the column's gap (5% of its width); --home-gap would re-resolve against this column. */
+      margin-block: -48px -5cqi;
+      padding-block: 48px 5cqi;
+      background: var(--bg);
+      gap: 5cqi;
+    }
+  }
+
+  /*
+   * Hero carousel entrance. --hero-from is the off-screen start (e.g. "100% 0" for the right).
+   */
+  .hero-slide-in {
+    animation: hero-slide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /*
+   * Hero portrait slots in the bottom-left, top-left and top-right corners. Each takes the
+   * shape of the photo it holds (aspect-ratio is set inline). The leaving portrait fades and
+   * shrinks out; the arriving one waits for that, then bounces in. When expanded, the portrait
+   * grows from its corner to the hero's full height (56.25% of its width at 16:9, minus the insets),
+   * keeping its shape and never wider than the hero. --aspect is the photo's width / height.
+   */
+  .hero-portrait {
+    --inset: 10px;
+    position: absolute;
+    bottom: var(--inset);
+    left: var(--inset);
+    width: calc(20% * var(--portrait-scale, 1));
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    scale: 0.9;
+    transition:
+      opacity 0.2s ease-in,
+      scale 0.2s ease-in,
+      width 0.2s ease-in;
+
+    &[data-corner^='top'] {
+      top: var(--inset);
+      bottom: auto;
+    }
+
+    &[data-corner$='right'] {
+      right: var(--inset);
+      left: auto;
+    }
+
+    &[data-shown] {
+      opacity: 1;
+      scale: 1;
+      pointer-events: auto;
+      /* A running transition would override the pop animation, so only width transitions here. */
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &[data-expanded] {
+      width: min(100% - 2 * var(--inset), (56.25% - 2 * var(--inset)) * var(--aspect));
+    }
+
+    &[data-pop] {
+      animation: portrait-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+    }
+
+    @variant desk {
+      --inset: 1.5625cqi;
+      border-radius: 1.25cqi;
+    }
+  }
+
+  /* Media viewer: a modal dialog showing one wallpaper or video almost full screen on a dark
+     backdrop. The grow-from-thumbnail animation runs from useThumbnailViewer. */
+  .media-viewer {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(0 0 0 / 0.88);
+
+    &[open] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &::backdrop {
+      background: transparent;
+    }
+  }
+
+  /* Width is set inline from the item's shape; height follows from its aspect ratio. */
+  .media-viewer-item {
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Writings panel: the essay list and an opened essay fade up as they replace each other. */
+  .panel-swap-in {
+    animation: panel-swap-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /*
+   * Side panel.
+   * Mobile: a full-screen layer that slides in. Only transform animates, so it stays on the
+   * compositor. Visibility flips after the slide-out so the hidden panel can't be reached.
+   * Desktop: a real flex sibling whose width animates 0 <-> 50vw, pushing the main column.
+   * The scroller inside has a fixed 50vw width so its content never reflows mid-animation.
+   */
+  .side-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow: hidden;
+    background: var(--bg);
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:
+      transform 0.45s var(--ease-panel),
+      visibility 0s linear 0.45s,
+      background-color 0.3s;
+
+    &[data-open] {
+      visibility: visible;
+      transform: none;
+      transition:
+        transform 0.45s var(--ease-panel),
+        visibility 0s,
+        background-color 0.3s;
+    }
+
+    @variant desk {
+      position: sticky;
+      inset: auto;
+      top: 0;
+      z-index: auto;
+      flex: 0 0 auto;
+      width: 0;
+      height: 100vh;
+      height: 100dvh;
+      box-sizing: border-box;
+      border-left: 1px solid transparent;
+      visibility: visible;
+      transform: none;
+      transition:
+        width 0.45s var(--ease-panel),
+        border-color 0.45s,
+        background-color 0.3s;
+
+      &[data-open] {
+        width: 50vw;
+        border-left-color: var(--panel-border);
+        transition:
+          width 0.45s var(--ease-panel),
+          border-color 0.45s,
+          background-color 0.3s;
+      }
+    }
+  }
+
+  .side-panel-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+
+    @variant desk {
+      display: none;
+    }
+  }
+
+  .side-panel-scroller {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 56px 20px 48px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    /* Still scrolls with wheel, trackpad, touch and keys; the bar itself is hidden. */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @variant desk {
+      width: 50vw;
+      padding: 40px;
+      opacity: 0;
+      transition: opacity 0.4s;
+
+      [data-open] > & {
+        opacity: 1;
+      }
+    }
+  }
 }
 
+/* Lock page scroll behind the full-screen mobile panel. */
+@media (width < 900px) {
+  html:has(.side-panel[data-open]) {
+    overflow: hidden;
+  }
+}
+
+@keyframes panel-swap-in {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+
+@keyframes portrait-pop {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+}
+
+@keyframes hero-slide-in {
+  from {
+    translate: var(--hero-from);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
