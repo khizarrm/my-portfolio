@@ -1,25 +1,47 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Inter_Tight } from 'next/font/google'
+import type { ReactNode } from 'react'
+import { site } from '@/content/site'
 import './globals.css'
 
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-inter-tight',
+})
+
 export const metadata: Metadata = {
-  title: "Khizar Malik",
-  description: 'Software Developer',
+  metadataBase: new URL(site.url),
+  title: { default: site.name, template: `%s - ${site.name}` },
+  description: site.description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: site.name,
+    title: site.name,
+    description: site.description,
+    url: '/',
+  },
+  twitter: { card: 'summary_large_image' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export const viewport: Viewport = {
+  themeColor: '#0b0b0c',
+  colorScheme: 'dark',
+}
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      </head>
-      <body className="font-sans">{children}</body>
+    <html lang="en" className={interTight.variable}>
+      <body>{children}</body>
     </html>
   )
 }
