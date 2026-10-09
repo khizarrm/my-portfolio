@@ -1,0 +1,9 @@
+# Overrides the build settings in the Netlify UI. @netlify/plugin-nextjs reads the Next.js
+# output from .next (not dist) and turns it into Netlify functions and static assets.
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  # Next 16 needs Node 20.9+; match local development (devEngines in package.json).
+  NODE_VERSION = "24"
