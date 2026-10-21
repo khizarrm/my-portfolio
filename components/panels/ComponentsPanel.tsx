@@ -5,6 +5,7 @@ import { components, componentsIntro } from '@/content/components'
 import type { ComponentEntry } from '@/content/types'
 import { panelTitles } from '@/lib/panels'
 import { RichText } from '../RichText'
+import { ChatLoaderDemo } from '../showcase/ChatLoaderDemo'
 import { CopyButton } from '../showcase/CopyButton'
 import { HeroCarousel, type HeroImage } from '../showcase/HeroCarousel'
 import { PromptBox } from '../showcase/PromptInputBox'
@@ -36,6 +37,32 @@ const heroPortraits: HeroImage[] = [
 type Demo = { file: string; preview: ReactNode; prompt: (source: string) => string }
 
 const demos: Record<NonNullable<ComponentEntry['demo']>, Demo> = {
+  'chat-loader': {
+    file: 'components/showcase/ChatLoader.tsx',
+    preview: <ChatLoaderDemo />,
+    prompt: (source) => `You are given a task to integrate an existing React component in the codebase.
+
+The codebase should support React 19 and TypeScript. The component has no dependencies and styles itself inline, so Tailwind is not required.
+
+Copy this component to the project's components folder as chat-loader.tsx:
+\`\`\`tsx
+${source}
+\`\`\`
+
+Implementation guidelines
+1. Props: phase ('intake' | 'working' | 'settling' | 'sighting'), size (px, default 20), color (default white), speed, transitionMs, plus any div props.
+2. phase is the only prop that changes at runtime. Keep it in whatever already tracks the request, and don't remount the loader when it changes: the same instance has to receive the new value so the shape can morph.
+3. Map the app's state onto phase: intake = request sent, nothing streamed back yet; working = tokens streaming or tools running; settling = output finished, final pass; sighting = verification before the answer is shown. If the app only knows "loading", use "working".
+4. The box is 4.4 x 4.2 times size and never resizes between phases. Use 20 standalone, or 8-12 inline next to text.
+5. The default color is white, so place it on a dark or brand-coloured surface, or pass color (e.g. currentColor) on a light one.
+6. It runs its own requestAnimationFrame loop, cleaned up on unmount, and slows to a quarter speed with prefers-reduced-motion.
+
+Questions to ask
+- Where will the response appear (an empty assistant bubble, a thinking row, an agent run panel)?
+- Which phases can the backend actually report?
+- Is there an existing spinner this should replace?
+`,
+  },
   'hero-carousel': {
     file: 'components/showcase/HeroCarousel.tsx',
     preview: <HeroCarousel backgrounds={heroBackgrounds} portraits={heroPortraits} />,

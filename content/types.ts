@@ -81,7 +81,7 @@ export type ComponentEntry = {
   description: string
   href?: string
   /** Live demo with copy code / copy prompt buttons; keys are registered in ComponentsPanel. */
-  demo?: 'prompt-input-box' | 'hero-carousel'
+  demo?: 'prompt-input-box' | 'hero-carousel' | 'chat-loader'
 }
 
 export type Prompt = {
