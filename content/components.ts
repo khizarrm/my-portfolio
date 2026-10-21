@@ -16,4 +16,10 @@ export const components: ComponentEntry[] = [
       'the hero at the top of this site. backgrounds slide in from a different side every few seconds, a portrait pops into the next corner, and clicking the portrait grows it to full height. click anywhere else to skip ahead.',
     demo: 'hero-carousel',
   },
+  {
+    name: 'chat loader',
+    description:
+      'a loading indicator for ai agents. one blobby shape that morphs between the stages of a request: reading it, working, settling, then double-checking. pick a phase below or let it cycle.',
+    demo: 'chat-loader',
+  },
 ]

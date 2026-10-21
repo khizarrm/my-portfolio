@@ -1,21 +1,22 @@
-# New, longer home intro
+# Add "chat loader" to the Components panel
 
-Copy: the user's 9-paragraph intro (Thirdspace, cold emailing / Sema, internships, Bramble, components, writing/reading/AI art/content, this site, email).
+## What I found
 
-## Problem: desktop fit-to-screen
+- This is not a shadcn project (no `components.json`, no `components/ui`). Components panel demos live in `components/showcase/` and are registered in `components/panels/ComponentsPanel.tsx` + `content/components.ts`. The "copy code" button reads the source file at build time.
+- Stack already fits: React 19, Tailwind v4, strict TypeScript. The loader has no dependencies.
+- The component needs a dark surface (default color is white). The demo frame uses `bg-frame`, so I'd verify it on the real frame colour.
 
-The desktop home column scales as one unit so name + hero + intro fit in the viewport without scrolling (`.home-column` / `--home-ratio` in `app/globals.css`). The new copy roughly doubles the height (ratio ~1.4 -> ~2.0), which shrinks body text to ~10px on an 800px-tall window. Options:
+## Plan
 
-- **A. Let the home page scroll on desktop** (recommended): fixed comfortable size (640px column, ~18px text, same as max today), page scrolls. Remove the ratio-based scaling, keep cqi sizing so nothing else changes.
-- **B. Keep fit-to-screen with a minimum size**: scale down until text hits ~15px, then scroll. More code, two behaviours.
+1. Create `components/showcase/ChatLoader.tsx` (instead of `components/ui/loaders-gooey-blobs.tsx`, to match the existing showcase pattern). Contents: the gooey-blobs component from your paste (with `"use client"`), exported as `ChatLoader` (props type `ChatLoaderProps`, `LoaderPhase` type kept). Reformatted to the repo style (single quotes, no semicolons) via prettier.
+2. Add a small client demo in the same folder, `ChatLoaderDemo` (exported from `ChatLoader.tsx` or its own file): the loader on a dark `bg-neutral-950` tile with four phase buttons (intake / working / settling / sighting) and an Auto toggle that cycles every 3s. Needs to be a client component because it holds state; `ComponentsPanel` is a server component.
+3. `content/types.ts`: add `'chat-loader'` to `ComponentEntry['demo']`.
+4. `content/components.ts`: add entry `name: 'chat loader'`, with a lowercase description matching the others (a status indicator for an AI agent: one shape that morphs between phases of a request).
+5. `ComponentsPanel.tsx`: register `'chat-loader'` in `demos` with `file`, `preview: <ChatLoaderDemo />`, and a "copy prompt" text in the same format as the existing two (props, phase mapping, dark-surface note, questions to ask).
+6. Verify: `pnpm check` (em-dash check, typecheck, lint, prettier). You check the look in your browser.
 
-## Links
+## Questions
 
-- Add external-link support to intro segments: `{ text, href }` alongside `{ text, panel }`, rendered with `RichText`-style `<a target=_blank>`.
-- Panel links: "components" -> Components, "writing" -> Thoughts, "reading" -> Reading, "making art using ai" -> Wallpapers, "content" -> Content, "the things i've done" -> Work.
-- External: "thirdspace" -> thirdspace.so, "sema" -> try-sema.com, "bramble" -> bramble.solutions.
-- Needs URLs from user: "here's an email i wrote" (the email), the three "here"s (which internships + links), "email me" (address).
-
-## Verify
-
-- `pnpm check`; user checks layout in their browser.
+- Where in the list should it go: at the end (default) or at the top?
+- Should the demo have the phase buttons + Auto toggle (as in your paste), or just auto-cycle with no controls?
+- Any description wording you want, or should I write it in your usual lowercase style?
